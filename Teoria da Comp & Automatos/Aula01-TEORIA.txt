@@ -1,0 +1,45 @@
+Teoria da Computação e Autômatos - Aula 01 (TEORIA)
+
+
+O quê é um autômato?
+
+- Autômato é toda máquina que imprime determinados movimentos de forma pré-determinada
+
+
+O quê é um Autômato Finito Determinístico? (AFD):
+
+- É um modelo computacional de memória limitada que permite concentrar no estudo de como uma computação é realizada.
+- Descreve comportamentos em que estados de programação progridem de acordo com sinais de entrada, executando ações pertinentes nas
+mudanças entre ou nos estados, verificando se uma entrada pertence ou não a uma linguagem.
+
+
+Modelagem de um AFD com diagrama de transição de estados (DTE):
+
+Para isso, definimos os elementos abaixo (exemplo):
+	⋄ 𝑄 = (Q0, Q1, Q2)	-> conjunto de estados, sendo Q0 o inicial e o Q1 o final(F), por exemplo;
+	⋄ Σ = (0, 1)	-> conjunto de elementos conhecidos pelo autômato;
+	⋄ 𝛿 = ∶ 𝑄 × Σ → 𝑄	-> função que mapeia alores no conjunto de entrada e retorna o próximo estado
+
+
+Tabela de transição de estados:
+
+⋄ É uma outra forma de modelar um AFD
+⋄ Representa a função de transição 𝛿 de um AFD
+⋄ As linhas representam o estado atual do autômato em um certo momento
+⋄ Na primeira linha da tabela sempre se escreve o estado inicial, 𝑞0 ∈ 𝑄
+⋄ As colunas representam os símbolos 𝜎 ∈ Σ que poderão ser encontrados nas entradas que autômato consumirá
+
+
+Formalização de um AFD:
+
+Um Autômato Finito Determinístico (AFD) é uma quíntupla 𝑀 = (𝑄, Σ, 𝛿, 𝑞0, 𝐹),
+onde:
+• 𝑄 é conjunto de estados;
+• Σ é um alfabeto finito de entrada;
+• 𝛿 é uma função de transição, que mapeia um par de estado e entrada a um próximo
+estado: 𝛿 ∶ 𝑄 × Σ → 𝑄;
+• 𝑞0 ∈ 𝑄 é um estado inicial;
+• 𝐹 ⊆ 𝑄 é um subconjunto consistindo de estados finais
+
+
+* VEJA OS EXEMPLOS E EXERCÍCIOS NO CADERNO *
