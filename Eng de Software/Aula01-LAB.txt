@@ -1,0 +1,24 @@
+Engenharia de Software - Aula 01 (LAB)
+
+ATIVIDADE - Introduzir os conceitos básicos da Engenharia de Software (atividade em grupo):
+
+- grupos com 4 a 6 pessoas
+- elaborar uma ponte sobre um rio
+
+Perguntas Introdutórias:
+
+- Por que a Engenharia de Software é uma disciplina essencial para a criação de softwares de alta qualidade?
+
+	É essencial porque é através dela que ocorre o desenvolvimento de uma solução para um projeto de software, isso desede a etapa dos requisitos, planejamento, reuniões, etc.
+	
+- O que é Engenharia de Software e qual é a sua importância no desenvolvimento de soluções tecnológicas?
+
+	Engenharia de Software é uma abordagem sistemática para o planejamento, desenvolvimento e manutenabilidade de um projeto de software (sistemas, aplicações, etc). Esse processo é importante para que o software seja desenvolvido de forma organizada, com qualidade e garantindo que o mesmo possa ser replicado.
+
+- Como a colaboração e o trabalho em equipe são fundamentais para o sucesso de projetos nessa área?
+
+	Colaboração e trabalho em equipe são fundamentais para o bom desenvolvimento de um projeto, onde ocorre a reunião ideias que aprimoram o projeto, geração de interações interpessoais, resolução de conflitos, etc.
+
+	
+
+	

@@ -1,0 +1,51 @@
+Engenharia de Software - Aula 02 (TEO)
+
+
+Desenvolvimento de Software na Atualidade - Visão Geral:
+
+- HOJE: utiliza equipes de TI multifuncionais centralizadas e auto-organizadas;
+- Meta: satisfazer os requisitos do cliente, de forma planejada e mantendo bom engajamento da equipe;
+- Objetivo Principal: desenvolver de forma ágil e com qualidade;
+
+Nascimento de um Software --> definido nos requisitos para o desenvolvimento daquele software
+Morte/ Falecimento de Software --> definida no momento em que deixam de ser criadas atualizações para o mesmo
+
+Características de Hardware:
+• Hardware é fabricado;
+• Hardware “se desgasta”;
+• Hardware pode ser fabricado em larga escala
+
+Características de Softwares:
+• Software não é fabricado, é desenvolvido;
+• Software não “se desgasta”;
+• Software, em sua grande parte, é construído sob encomenda
+
+Tipos de Softwares:
+- Softwares de Sistemas (utilizados por outros softwares -> bibliotecas, compiladores, SOs, etc);
+- Softwares de Aplicação (utilizados por pessoas, visando resolver problemas);
+- Softwares de Tempo Real (responde a requisições dentro de um limite de tempo especificado);
+- Softwares Científicos e de Engenharia (apoio, simulação, construção e testes -> ferramentas CASE como Cad, VSCode, etc);
+- Softwares Embarcados (residem dentro de um produto -> carro, micro-ondas, geladeira, etc);
+- Softwares de Prateleira (oferecidos em massa -> jogos, Microsoft Office, etc);
+- Softwares pra Web (disponibilizados por navegador através da internet -> e-commerce, e-learning, etc);
+- Softwares para IA (resolver problemas complexos através de algoritmos probabilísticos -> ChatGPT, Gemini, etc);
+- Softwares para Computação Ubíqua (softwares de aplicação que permitem que pequenos dispositivos móveis);
+- Softwares Abertos (podem ser open source ou livres)
+
+*CASE: Computar-Aided Software Engeneering
+
+
+Crise do Software:
+- Até os anos 70, softwares eram desenvolvidos de forma descentralizada e individual;
+- Problemas: atrasos, custos elevados, entregas incertas, desempenho inferior, inconsistências de código, difícil manutenção
+
+
+QUESTÕES:
+
+2. O que são softwares legados?
+	Softwares desatualizados, não mais suportados pelos desenvolvedores originais.
+3. Qual a relação de softwares legados com o desenvolvimento de
+software?
+	É possível afirmar que softwares legados estão na fase final de seu desenvolvimento, ou seja, já são sucateados ou serão substituídos, exigindo mudanças em sistemas que os utilizam.
+4. Quais são os possíveis problemas dos softwares legados?
+	Por estarem defasados, podem gerar problemas de compatibilidade com sistemas mais recentes, falta de suporte técnico & alto custo de manutenção, vulnerabilidades de segurança, etc.
