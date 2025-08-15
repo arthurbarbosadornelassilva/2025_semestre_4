@@ -1,0 +1,36 @@
+TESTES COM DART NA AULA DE HOJE (15/08)
+
+void main() {
+  final nome = "Arthur";  //'final' infere o tipo do dado (nesse caso, String) em tempo de execução
+  print(nome);
+  print("${nome.runtimeType} \n");
+  
+  const idade = 17; //'const' exige a atribuição de valor para 'inferir o tipo', ainda em tempo de compilação
+  print(idade);
+  print("${idade.runtimeType} \n");
+  
+  const nota = 1;
+  switch (nota) {
+    case 10:
+      print('A');
+      break;
+    case 9:
+      print('B');
+      break;
+    case <= 8 && >=0:
+      print('END');
+      break;
+    default:
+      print('banana');
+  }
+  
+  final vaiChover = 'XX';
+  switch (vaiChover) {
+    case 'Sim':
+      print('Leve o guarda-chuva!');
+    case 'Nao':
+      print('Não leve o guarda-chuva');
+    default:
+      print('END');
+  }
+}
