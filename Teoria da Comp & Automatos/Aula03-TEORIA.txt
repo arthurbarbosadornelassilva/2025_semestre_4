@@ -1,0 +1,19 @@
+Teoria da Computação e Autômatos - Aula 03 (TEORIA):
+--------------------------------------------------------------------
+
+Autômatos Finitos Não-Determinísticos (AFND):
+
+- Modelo de autômato finito em que se permite que, para um mesmo símbolo de entrada, hajam transições para estados distintos;
+- Todo AFND pode ser convertido em um AFD equivalente;
+- Objetivo do AFND: facilitar a conversão de expressões regulares em autômatos finitos determinísticos;
+
+Diferenças:
+• Em um AFD, todo estado possui uma e única transição sainte para cada símbolo do
+alfabeto. Em um AFND, pode haver mais de uma transição sainte com o mesmo
+símbolo. Por exemplo, no slide 3 existem duas saídas para o símbolo 1 a partir do
+estado 𝑞1;
+• Em um AFD os rótulos das transições são apenas símbolos de Σ. Em um AFND,
+acrescenta‐se a cadeia vazia (𝜖) como símbolo válido para haver transição. Uma
+transição com rótulo 𝜎 pode ocorrer espontaneamente para o próximo estado,
+sem consumir nenhum símbolo de entrada
+

@@ -1,0 +1,49 @@
+Engenharia de Software - Aula 03 (TEORIA)
+
+Camadas da Engenharia de Software:
+- Ferramentas (mais interno)
+- Métodos		|
+- Processo	|
+- Qualidade (mais externo)
+
+1. Qualidade: foco da engenharia de software, criar um software total com qualidade;
+2. Processo: conjunto de atividades e resultados associados que geram um produto de software, sendo as fundamentais e comuns a todos os processos: Especificação, Projeto, Implementação e Teste;
+3. Métodos: Abordagens para o desenvolvimento de software, formando a camada que fornece a técnica de como fazer para construir softwares, ou seja a maneira de conduzir um processo. Exemplos
+4. Ferramentas: Camada que proporciona apoio automatizado aos processos e métodos, como por exemplo o uso das ferramentas CASE - Computer Aided Software Engineering.
+
+
+Processo de Desenvolvimento de Software:
+- Processo é um conjunto de atividades e resultados associados que geram um produto de software;
+- Um modelo de processo de software define um conjunto distinto de atividades, ações, tarefas, marcos e produtos de trabalho que são necessários para fazer engenharia de software com alta qualidade;
+- Atividades fundamentais comuns a todos os modelos de processos de desenvolvimento de software:
+	1. Especificação do Software (requisitos funcionais, não-funcionais e critérios de aceitação)
+	2. Desenvolvimento do Software (etapa de codificação, seguindo os requisistos)
+	3. Validação do Software (etapa de verificação se os requisitos estão sendo seguidos)
+	4. Evolução do Software (manutenção e mutabilidade do software)
+
+
+Pincipais Modelos de Processo de Software Formais:
+- Alguns modelos de processos de software são mais adequados do que outros:
+	3.1. Modelo Sequencial Linear (Cascata) *
+	3.2. Modelo Prototipação *
+	3.3. Modelo Incremental *
+	3.4. Modelo RUP *
+	3.5. Modelo Espiral *
+	3.6. RAD (Rapid Application Development) *
+	3.7. Modelo Baseado em Componentes
+	3.8. Modelo de Desenvolvimento Concorrente
+	3.9. Modelo de Métodos Formais
+	3.10. Modelo de Técnicas de 4ª. Geração
+
+* Link pro Material com as especificações de cada modelo de processo formal:
+https://imt.instructure.com/courses/1330/files/430876?module_item_id=77106
+
+
+Questões para o desenvolvimento de um software:
+1. Qual é o problema a ser resolvido?
+2. Que características são usadas para resolver o problema?
+3. Como o artefato e a solução serão realizados?
+4. Como o artefato vai ser construído?
+5. Que abordagem será usada para descobrir erros que foram
+cometidos no projeto e na construção do artefato?
+6. Como o artefato será mantido em longo prazo?

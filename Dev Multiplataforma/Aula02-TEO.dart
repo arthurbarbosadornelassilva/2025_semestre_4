@@ -1,11 +1,11 @@
-ENTRADA E SAÍDA DE DADOS - DART:
+// ENTRADA E SAÍDA DE DADOS - DART:
 
-- ENTRADA (stdin):
-- SAÍDA (stdout):
+// - ENTRADA (stdin):
+// - SAÍDA (stdout):
 
-*stdin & stdout fazem parte do pacote 'dart:io', e dependem de seu import
+// *stdin & stdout fazem parte do pacote 'dart:io', e dependem de seu import
 
-EXEMPLO 1:
+//  EXEMPLO 1:
 
 import 'dart:io';
 void main() {

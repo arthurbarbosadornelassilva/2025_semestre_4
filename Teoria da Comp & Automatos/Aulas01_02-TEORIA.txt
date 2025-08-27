@@ -1,4 +1,4 @@
-Teoria da Computação e Autômatos - Aula 01 (TEORIA)
+Teoria da Computação e Autômatos - Aulas 01 & 02 (TEORIA)
 
 
 O quê é um autômato?

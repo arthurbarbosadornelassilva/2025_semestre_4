@@ -1,4 +1,4 @@
-TESTES COM DART NA AULA DE HOJE (15/08)
+// TESTES COM DART NA AULA DE HOJE (15/08)
 
 void main() {
   final nome = "Arthur";  //'final' infere o tipo do dado (nesse caso, String) em tempo de execução
@@ -24,7 +24,7 @@ void main() {
       print('banana');
   }
   
-  final vaiChover = 'XX';
+  final vaiChover = 'Nao';
   switch (vaiChover) {
     case 'Sim':
       print('Leve o guarda-chuva!');

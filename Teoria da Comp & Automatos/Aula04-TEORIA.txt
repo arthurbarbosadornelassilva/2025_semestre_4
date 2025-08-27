@@ -1,0 +1,14 @@
+Teoria Aula 04 - PROPRIEDADES DAS LINGUAGENS REGULARES E AFDs
+-------------------------------------------------------------------------------------------
+
+- O conceito de linguagem: é um subconjunto de todas as possíveis cadeias que podem ser formadas a partir de um alfabeto Σ, escrito como 𝐿 ⊆ Σ*;
+- Uma linguagem é dita regular (também chamada de conjunto regular), quando ela é reconhecida por um autômato finito determinístico (AFD);
+- Se 𝐴 e 𝐵 são linguagens regulares, definem‐se as seguintes operações regulares:
+	⋄ União: 𝐴 ∪ 𝐵 = {𝑥 ∣ 𝑥 ∈ 𝐴 ∨ 𝑥 ∈ 𝐵}
+	⋄ Concatenação: 𝐴 ∘ 𝐵 = {𝑥𝑦 ∣ 𝑥 ∈ 𝐴 ∧ 𝑦 ∈ 𝐵}
+	⋄ Estrela (ou fecho de Kleene): 𝐴∗ = {𝑥1𝑥2 ... 𝑥𝑘 ∣ 𝑘 ≥ 0 ∧ 𝑥𝑖 ∈ 𝐴}. A cadeia vazia sempre
+pertence à 𝐴∗ (𝜖 ∈ 𝐴∗). Esta operação unária concatena zero, uma, duas,..., infinitas vezes, cadeias de 𝐴 entre si
+- Uma operação é dita fechada sobre um conjunto se ao se aplicar tal operação sobre
+elementos do conjunto resulta em elementos do conjunto;
+
+Estas linguagens são linguagens regulares pois possuem AFDs que as reconhecem!!

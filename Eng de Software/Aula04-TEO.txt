@@ -1,0 +1,110 @@
+Aula 04 - TEORIA: Métricas de Software
+-------------------------------------------------
+
+Qual a razão de se 'medir' algo?
+
+Não conseguindo medir, não se consegue:
+1. Controlar;
+2. Gerenciar;
+3. Melhorar;
+4. Trabalhar
+
+Limites para medir:
+• Alinhar os objetivos das inferências com os objetivos da
+empresa;
+• Estabelecer um programa de métricas adequado, plausível,
+factível e gradual;
+• Não medir mais que o necessário ao contexto
+
+Tipos de Métricas:
+- Métricas Primárias (apontamentos pontuais):
+	- Apontamentos dos fatos;
+	- Informações objetivas da realidade;
+	- Tendência à expressão numérica;
+	- Exemplos: defeitos, horas trabalhadas, custo, reclamações etc.
+
+- Métricas Secundárias (apontamentos abstratos):
+	- Indicadores, que expressam comportamentos além dos números;
+	- Resultado de uma relação de: MÉTRICA / FATOR;
+	- Exemplos: densidade de defeitos, defeitos por fase de projeto etc
+
+- Critérios:
+	- Priorização:
+		grade de importância x urgência;
+	- Características Intrínsecas:
+		natureza e comportamento;
+	- Características Extrínsecas:
+		relacionamento com o contexto da medição
+
+Sobre Métricas de Software:
+• Medidas quantitativas ou qualitativas usadas para avaliar
+diversos aspectos do desenvolvimento, qualidade,
+manutenção e desempenho de software;
+• São utilizadas para quantificar diferentes características do
+processo de desenvolvimento de software, do código-fonte e
+do produto final, a fim de obter uma compreensão objetiva
+sobre a eficácia, eficiência e qualidade do software
+
+	Categorias de Métricas de Software:
+	• Métricas de Processo;
+		✓ Tempo de ciclo de desenvolvimento;
+		✓ Taxa de retrabalho;
+		✓ Taxa de cumprimento de prazos;
+		✓ Taxa de defeito por fase;
+		✓ Eficácia de revisão de código;
+		✓ Índice de satisfação da equipe
+	• Métricas de Produto;
+		✓ Linhas de código;
+		✓ Complexidade ciclomática;
+		✓ Taxa de duplicação de código;
+		✓ Índice de manutenibilidade;
+		✓ Taxa de erros;
+		✓ Cobertura de testes
+	• Métricas de Qualidade;
+		✓ Taxa de defeitos por linha de código;
+		✓ Tempo médio entre falhas;
+		✓ Taxa de falhas em produção;
+		✓ Cobertura de código por testes;
+		✓ Taxa de entregas bem-sucedidas;
+		✓ Número de defeitos críticos;
+		✓ Tempo médio de correção
+	• Métricas de Uso;
+		✓ Taxa de utilização de recursos;
+		✓ Taxa de utilização de funcionalidades;
+		✓ Taxa de conversão;
+		✓ Taxa de abandono;
+		✓ Tempo médio de sessão;
+		✓ Taxa de rejeição;
+		✓ Taxa de retenção de usuários;
+	• Métricas de Projeto;
+		✓ Coeficiente de acoplamento;
+		✓ Índice de coesão;
+		✓ Profundidade de herança;
+		✓ Número médio de parâmetros por função;
+		✓ Tamanho médio de função;
+		✓ Taxa de comentários;
+		✓ Taxa de entrega no prazo
+	• Métricas de Teste.
+		✓ Cobertura de código;
+		✓ Taxa de sucesso de testes;
+		✓ Taxa de falhas de testes;
+		✓ Tempo médio de execução de testes;
+		✓ Número de testes automatizados versus manuais;
+		✓ Número de casos de teste por requisito;
+		✓ Taxa de retorno de defeitos
+
+Impactos ao utilizar Métricas de Software:
+- Melhora na tomada de decisões: dados objetivos aprimoram a tomada de decisões;
+- Identificação de Problemas e Oportunidades: identificar áreas problemáticas e oportunidades;
+- Acompanhamento de Progresso e Desempenho;
+- Otimização de Processos: equipes podem identificar gargalos, ineficiências e áreas que precisam de ajustes;
+- Feedback para Melhoria Contínua: métricas fornecem um feedback contínuo sobre a qualidade do software, resultando em produtos mais confiáveis e satisfatórios para os usuários.
+
+
+Conclusão:
+• Utilizar métricas de software pode oferecer uma visão objetiva e
+fundamentada sobre o desenvolvimento e qualidade do software,
+possibilitando uma gestão mais eficaz, melhor tomada de decisões
+e maior garantia de sucesso do projeto;
+• Por outro lado, a não utilização de métricas pode levar a riscos,
+ineficiências e perda de oportunidades de melhoria
