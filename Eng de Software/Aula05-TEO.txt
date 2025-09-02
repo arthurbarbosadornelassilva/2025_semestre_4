@@ -1,0 +1,91 @@
+Aula 05 - Estimativas do Projeto de Software:
+------------------------------------------------------
+
+O que são Estimativas de Software?
+
+	• Previsão do esforço, tempo e recursos
+	necessários para concluir uma tarefa, uma fase ou um
+	projeto completo de software;
+	• São essenciais para a gestão de projetos, alocação de
+	recursos, definição de prazos, custos e comunicação com os
+	stakeholders
+
+
+Para que são usadas as estimativas de Software?
+
+	Para responder as seguintes questões:
+	1. Quanto tempo levará para concluir o projeto?
+	2. Quantos membros da equipe serão necessários?
+	3. Quanto custará o projeto?
+	4. Quais recursos serão necessários?
+	5. Quando o projeto estará pronto para ser entregue?
+
+	* Estimar o desenvolvimento de software é um desafio complexo devido à natureza criativa e imprevisível do processo de desenvolvimento, bem como devido à influência de fatores externos
+
+
+Quais são as principais estimativas de Software?
+
+	Existem diversas técnicas e abordagens para realizar estimativas de software, tais como:
+	1. Estimativas Baseadas em Analogias: compara o projeto atual com projetos anteriores e semelhantes, levando em consideração tamanho, complexidade, experiências e esforços envolvidos, mas aplicando a ele os devidos fatores, ajustando as estimativas;
+	2. Estimativas Paramétricas: uso de modelos matemáticos para estimar o esforço, o tempo e os recursos com base em parâmetros específicos do projeto. Primeiro, obtemos os dados históricos, depois se identifica alguns parâmetros que influenciam diretamente o esforço e o tempo de desenvolvimento e montamos uma fórmula para calcular o Esforço Estimado (EE) -> EXEMPLO:
+
+		EE = k1 * NF + k2 * TE + k3 * CS
+
+		Onde:
+		EE: Esforço Estimado (em homem-mês);
+		k1: Coeficiente 1, derivado de dados históricos;
+		NF: Número de Funcionalidades;
+		k2: Coeficiente 2, derivado de dados históricos;
+		TE: Tamanho da Equipe;
+		k3: Coeficiente 3, derivado de dados históricos;
+		CS: Complexidade do Sistema
+
+	3. Estimativas por Pontos de Função/Caso de Uso: quantificação das funcionalidades/casos de uso do software para estimar o tamanho e, consequentemente, o esforço necessário para elaborá-lo. Isso envolve, portanto, quantificar as funcionalidades do sistema, atribuir pontos de função a cada uma delas, somar seus valores ao final e multiplicar pela taxa de produtividade (X horas por semana, por exemplo), assim obtendo uma estimativa total -> EXEMPLO:
+		
+		ETPF = 6 + 4 + 6 + 4 + 3 = 23 pontos de função
+		EEh = ETPF * TP
+
+		Onde:
+		ETPF: Estimativa Total de Pontos de Função
+		EEh: Estimativa de Esforço em horas;
+		ETPF: Estimativa Total de Pontos de Função; e
+		TP: Taxa de Produtividade.
+
+	4. Estimativas Heurísticas: são abordagens mais informais que dependem da experiência e do julgamento da equipe de desenvolvimento. Envolve usar o conhecimento e a
+experiência da equipe para fazer uma estimativa aproximada. Nesse cenário:
+		• Você reúne sua equipe de desenvolvimento experiente e realiza uma discussão detalhada sobre o projeto;
+		• Vocês analisam a complexidade das funcionalidades, os possíveis riscos, os recursos disponíveis e a experiência da equipe;
+		• É criado uma lista de tópicos que estimam o tempo das tarefas em semanas (DESIGN -> 1 semana/ DEV -> 2 semanas/ TESTES -> 2 semanas/ TOTAL: 5 semanas)
+
+	5. Estimativa de Planejamento Ágil/ Pontos de História: Nas metodologias ágeis, como Scrum e Kanban, as estimativas são frequentemente baseadas em iterações curtas e flexíveis, sendo ajustadas ao longo do tempo conforme mais informações sobre o projeto se tornam disponíveis. A equipe atribui pontos de história a cada história de usuário com base em sua complexidade, tamanho e esforço necessário para implementação -> EXEMPLO:
+
+		1. Criar Tarefa Simples: 2 pontos;
+		2. Editar Tarefa: 3 pontos;
+		3. Adicionar Comentário à Tarefa: 1 ponto;
+		4. Criar Projeto Complexo com Equipe: 8 pontos;
+		5. Gerar Relatório de Atividades: 5 pontos.
+	
+		A soma total dos pontos de história para a iteração é 19 pontos
+
+
+Características das Estimativas de Software:
+
+• Estimativas de Custo e Esforço não são ciências exatas;
+• Fatores humanos, técnicos, ambientais e políticos podem
+afetar o custo final do software e o esforço necessário para
+desenvolvê-lo
+• Para a obtenção de estimativas de custos e esforços mais
+confiáveis, pode-se:
+	1. Adiar as estimativas o máximo possível, o que, em
+excesso, não é viável em projetos de software;
+	2. Fundamentar as estimativas em projetos similares e já
+concluídos;
+	3. Usar técnicas de decomposição relativamente simples;
+	4. Utilizar um ou mais modelos empíricos a essas
+estimativas; e
+	5. Aplicar todas as estimativas em paralelo, uma verificando
+a outra
+• É recomendável que as estimativas sejam
+revisadas e atualizadas conforme o projeto progride para
+garantir que o planejamento esteja alinhado com a
+realidade.

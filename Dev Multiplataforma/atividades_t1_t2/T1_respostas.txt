@@ -68,3 +68,67 @@ Section 1
 10.  Interfaces define what? 
         
         E. Variables and methods
+
+Section 2
+
+11.  When line 10 is executed, which method will be called? 
+1.   class Account { 
+2.   public void deposit(int amt, int amt1) { } 
+3.   public void deposit(int amt){ } 
+4.   } 
+5.   public class CreditAccount extends Account { 
+6.   public void deposit() { } 
+7.   public void deposit(int amt) {} 
+8.   public static void main(String args[]){ 
+9.   Account account = new CreditAccount(); 
+10. account.deposit(10); 
+11. } 
+12. } 
+       
+        D.  Line 7
+
+
+12.  True or False:  The instanceof operator allows you to determine the type of an object.  
+       
+        A.  True 
+         
+ 
+13.  True or False:  The instanceof operator can find subclass objects when they are passed to 
+methods which declare a superclass type parameter.  
+        
+        A.  True 
+        
+ 
+14.  True or False:  Calling a subclass method by referring to a superclass works because you 
+have access to all specialized methods through virtual method invocation. 
+         
+        B.  False
+
+
+15.  What is special about including a resource in a try statement? (Choose Two) 
+        A.  An error will be thrown if the resources does not open 
+        B.  The program will fail if the resource does not open 
+ 
+ 
+16.  True or False:  Multiple catch statements can be used for a single try statement.  
+        A.  True 
+        
+ 
+17.  True or False:  Methods cannot throw exceptions.   
+        B.  False 
+
+
+18.  Which of the following are important to your survival as a programmer? 
+
+        D.  All of the above 
+        
+
+19.  Which of the following statements is false? 
+ 
+        C.  An ArrayList has a fixed length 
+
+
+20.  Which of the following is not a good technique to follow when reading code written by 
+others? 
+ 
+        C.  Learn the high level structure and starting point, and then figure out how it branches 
