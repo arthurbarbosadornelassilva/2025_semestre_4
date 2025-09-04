@@ -132,3 +132,65 @@ have access to all specialized methods through virtual method invocation.
 others? 
  
         C.  Learn the high level structure and starting point, and then figure out how it branches 
+
+Section 3
+
+21.  Which of the following is a sorting algorithm that involves repeatedly incrementing through 
+the array and swapping 2 adjacent values if they are in the wrong order until all elements are 
+in the correct order? 
+        
+        B.  Bubble Sort 
+        
+
+22.  Which of the following is a sorting algorithm that utilizes a "divide and conquer" technique to 
+sort arrays with optimal speed? 
+         
+        C.  Merge Sort  
+        
+
+23.  Which searching algorithm involves using a low, middle, and high index value to find the 
+location of a value in a sorted set of data (if it exists)? 
+        
+        A.  Binary Search 
+
+
+24.  True or False:  Binary searches can be performed on sorted and unsorted data.  
+        
+        A.  True 
+        
+ 
+25.  True or False:  A sequential search is an iteration through the array that stops at the index 
+where the desired element is found.  
+        
+        B.  False 
+ 
+
+26.  True or False:  Stacks are identical to Queues.  
+ 
+        B.  False 
+
+
+27.  FIFO stands for: 
+        
+        C.  First In First Out 
+        
+
+28.  Which statements, if inserted it at line 2, will ensure that the code snippet will compile 
+successfully?  (Choose Two) 
+        1.  public static void main (String[]args)    { 
+        2.  //insert code here 
+        3.  s.put ("StudentID", 123); 
+        4.  } 
+                 
+                B.  HashMap s= new HashMap();  
+                D.  SortedMap s= new TreeMap(); 
+ 
+29.  True or False:  A HashMap can only store String types.  
+         
+        B.  False  
+ 
+
+30.  True or False:  The Comparable interface defines the compareTo method.  
+        
+        A.  True 
+
