@@ -1,8 +1,11 @@
-import java.util.HashMap;
-
 public class respostas {
+    public static int recur(int x, int y) { 
+    if (x == 0) { 
+        return y; 
+    } 
+        return recur(x - 1, x + y); 
+    } 
     public static void main (String[]args)    { 
-        HashMap s= new HashMap(); 
-        s.put ("StudentID", 123); 
+        System.out.println(recur(4, 3));
     }
 }

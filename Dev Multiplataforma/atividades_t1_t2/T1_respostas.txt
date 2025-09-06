@@ -194,3 +194,173 @@ successfully?  (Choose Two)
         
         A.  True 
 
+
+31.  True or False:  < ? > is an example of a bounded generic wildcard.  
+        
+        B.  False 
+
+ 
+32.  What is the result from the following code snippet? 
+public static void main(String[] args) { 
+List <Gum> list1 = new ArrayList<Gum>(); 
+list1.add(new Gum()); 
+List list2 = list1; 
+list2.add(new Integer(9)); 
+System.out.println(list2.size()); 
+} 
+
+        B. 2 
+
+
+33.  Examine the code below.  Which statement about this code is true? 
+class Shape { } 
+class Circle extends Shape { } 
+class Rectangle extends Shape { } 
+class Node <T> { } 
+public class Test{ 
+public static void main(String[] args){ 
+Node <Circle>nc = new Node<>(); 
+Node <Shape>  ns = nc; 
+} 
+} 
+
+        C.  An error at line 8 causes compilation to fail 
+
+
+34.  Which of the following correctly initializes an object named cell of the class Telephones whose generic type is Cellular?
+
+        D.  Telephones<Cellular> cell = new Telephones<Cellular>(); 
+
+ 
+35.  public static  void <T> printArray(T[] array){....  is an example of what? 
+ 
+        D.  A generic method
+
+
+36.  Which of these could be a set? Why? 
+
+        B.  {1, 2, 5, 178, 259} because it contains no duplicates and all its elements are of  the same type 
+ 
+ 
+37.  Which interface forms the root of the collections hierarchy? 
+        
+        A.  java.util.Collection 
+
+
+38.  True or False:  A HashSet is a set that is similar to an ArrayList. A HashSet does not 
+have any specific ordering.  
+
+        A.  True 
+ 
+
+39.  True or False:  Sets may contain duplicates.  
+ 
+        B.  False
+
+
+40.  Consider the following recursive method recur(x, y). What is the value of recur(4, 3)? 
+public static int recur(int x, int y) { 
+if (x == 0) { 
+    return y; 
+} 
+    return recur(x - 1, x + y); 
+} 
+ 
+        D.  13
+
+Section 5
+
+1. True or False: Java 7 requires you create an instance of java.nio.file.File class.  
+A.  True 
+B.  False 
+ 
+2. Which of these construct a DataInputStream instance? 
+A.  New dataInputStream("java.txt"); 
+B.  New dataInputStream(new file("java.txt")); 
+C.  New dataInputStream(new FileInputStream("java.txt")); 
+D.  New dataInputStream(new InputStream("java.txt")); 
+E. New dataInputStream(new writer("java.txt")); 
+ 
+3. The Files class can perform which of the following functions? 
+A.  Creates files 
+B.  Navigates the file system 
+C.  Works across disk volumes 
+D.  Works with absolute paths 
+E. Works with relative paths 
+ 
+4. Which of the following is an absolute Windows path? 
+A.  / 
+B.  /home/user/username 
+C.  \Users\UserName\data 
+D.  C:\Users\UserName\data 
+E. Data 
+ 
+5. The System.out is what type of stream? 
+A.  A BufferedReader stream 
+B.  A BufferedWriter stream 
+C.  A PrintStream 
+D.  A Reader stream 
+E. An OutputStream 
+ 
+6. The BufferedOutputStream is a direct subclass of what other class? 
+A.  DigestOutputStream 
+B.  FilterOutputStream 
+C.  ObjectOutputStream 
+D.  OutputStream 
+E. PrintStream 
+ 
+7. When you delete files, directories, or links with the delete(Path p) method which of the 
+following exceptions can occur. 
+A.  DirectoryNotEmptyException 
+B.  IOException 
+C.  NoSuchFileException 
+D.  All of the above 
+E. None of the above 
+ 
+8. True or False:  The Paths class provides a static get() method to find a valid Path.  
+A.  True 
+B.  False 
+ 
+9. Which of the following static methods is not provided by the Files class to check file 
+properties or duplication? 
+A.  Files.isArchived(Path p); 
+B.  Files.isHidden(Path p); 
+C.  Files.isReadable(Path p); 
+D.  Files.isWritable(Path p); 
+
+10.  How would you make an instance of Car in a class that didn't import the vehicle package 
+below? 
+package vehicle; 
+public class Car{ 
+public Car(){} 
+} 
+A.  Car c = new Car(); 
+B.  vehicle.Car c=new Car(); 
+C.  vehicle.Car c=new vehicle.Car(); 
+D.  vehicle.Car c=new vehicle(); 
+E. None of the above 
+ 
+11.  True or False:  If a class is in a package, the system's CLASSPATH must be altered to access 
+the class.  
+A.  True 
+B.  False 
+ 
+12.  True or False:  An example of two tier architecture would be a client application working 
+with a server application.  
+A.  True 
+B.  False 
+ 
+13.  Which of the following are files that must be uploaded to a web server to deploy a Java 
+application/applet?  (Choose Three) 
+A.  .java files 
+B.  HTML files 
+C.  jar files 
+D.  JNLP files 
+E. SQL files 
+ 
+14.  Which of the following is an attribute of a three tier architecture application? 
+A.  An application of that type has a client and server only 
+B.  A complex application that includes a client, a server and database 
+C.  An application of that type runs on a single computer 
+D.  All of the above 
+E. None of the above
