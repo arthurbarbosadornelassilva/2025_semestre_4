@@ -31,13 +31,12 @@ Section 1
 
         A.  abstract final class Hello{} 
         B.  abstract private void act(){} 
-        D.  public abstract class Student{}
-
+        C
 
 5. Which two statements prevent a method from being overridden? (Choose Two)
 
         B.  final void act() {} 
-        C.  static final void act() {} 
+        D
 
 
 6. What is the output from the following code snippet? 
@@ -67,7 +66,7 @@ Section 1
 
 10.  Interfaces define what? 
         
-        E. Variables and methods
+        A
 
 Section 2
 
@@ -106,15 +105,18 @@ have access to all specialized methods through virtual method invocation.
 
 
 15.  What is special about including a resource in a try statement? (Choose Two) 
+        
         A.  An error will be thrown if the resources does not open 
-        B.  The program will fail if the resource does not open 
+        C
  
  
 16.  True or False:  Multiple catch statements can be used for a single try statement.  
+        
         A.  True 
         
  
 17.  True or False:  Methods cannot throw exceptions.   
+        
         B.  False 
 
 
@@ -156,7 +158,7 @@ location of a value in a sorted set of data (if it exists)?
 
 24.  True or False:  Binary searches can be performed on sorted and unsorted data.  
         
-        A.  True 
+        A. True
         
  
 25.  True or False:  A sequential search is an iteration through the array that stops at the index 
@@ -258,6 +260,8 @@ have any specific ordering.
         B.  False
 
 
+section 4
+
 40.  Consider the following recursive method recur(x, y). What is the value of recur(4, 3)? 
 public static int recur(int x, int y) { 
 if (x == 0) { 
@@ -268,99 +272,60 @@ if (x == 0) {
  
         D.  13
 
-Section 5
+41.  Which two statements can create an instance of an array? (Choose Two) 
+         
+        C.  int[] ia = new int [5];  
+        E. Object oa = new double[5]; 
 
-1. True or False: Java 7 requires you create an instance of java.nio.file.File class.  
-A.  True 
-B.  False 
- 
-2. Which of these construct a DataInputStream instance? 
-A.  New dataInputStream("java.txt"); 
-B.  New dataInputStream(new file("java.txt")); 
-C.  New dataInputStream(new FileInputStream("java.txt")); 
-D.  New dataInputStream(new InputStream("java.txt")); 
-E. New dataInputStream(new writer("java.txt")); 
- 
-3. The Files class can perform which of the following functions? 
-A.  Creates files 
-B.  Navigates the file system 
-C.  Works across disk volumes 
-D.  Works with absolute paths 
-E. Works with relative paths 
- 
-4. Which of the following is an absolute Windows path? 
-A.  / 
-B.  /home/user/username 
-C.  \Users\UserName\data 
-D.  C:\Users\UserName\data 
-E. Data 
- 
-5. The System.out is what type of stream? 
-A.  A BufferedReader stream 
-B.  A BufferedWriter stream 
-C.  A PrintStream 
-D.  A Reader stream 
-E. An OutputStream 
- 
-6. The BufferedOutputStream is a direct subclass of what other class? 
-A.  DigestOutputStream 
-B.  FilterOutputStream 
-C.  ObjectOutputStream 
-D.  OutputStream 
-E. PrintStream 
- 
-7. When you delete files, directories, or links with the delete(Path p) method which of the 
-following exceptions can occur. 
-A.  DirectoryNotEmptyException 
-B.  IOException 
-C.  NoSuchFileException 
-D.  All of the above 
-E. None of the above 
- 
-8. True or False:  The Paths class provides a static get() method to find a valid Path.  
-A.  True 
-B.  False 
- 
-9. Which of the following static methods is not provided by the Files class to check file 
-properties or duplication? 
-A.  Files.isArchived(Path p); 
-B.  Files.isHidden(Path p); 
-C.  Files.isReadable(Path p); 
-D.  Files.isWritable(Path p); 
 
-10.  How would you make an instance of Car in a class that didn't import the vehicle package 
-below? 
-package vehicle; 
-public class Car{ 
-public Car(){} 
-} 
-A.  Car c = new Car(); 
-B.  vehicle.Car c=new Car(); 
-C.  vehicle.Car c=new vehicle.Car(); 
-D.  vehicle.Car c=new vehicle(); 
-E. None of the above 
+42.  Which case handles the last recursive call? 
+        
+        A.  The base case 
+        
+
+43.  A linear recursive method can call how many copies of itself? 
+        
+        A.  1 
+        
+
+44.  Which of the following method(s) are StringBuilder methods? 
+        
+        E. All of the above 
+
+
+45.  What class is the split() method a member of? 
+         
+        C.  String 
+        
+
+46.  Identify the method, of those listed below, that is not available to both StringBuilders 
+and Strings? 
+
+        B. 
  
-11.  True or False:  If a class is in a package, the system's CLASSPATH must be altered to access 
-the class.  
-A.  True 
-B.  False 
+
+47.  True or False:  Matcher has a find method that checks if the specified pattern exists as a 
+sub-string of the string being matched.  
+        
+        A.  True 
+        
+
+48.  Which of the following correctly initializes a Matcher m for Pattern p and String str? 
+        
+        C.  Matcher m = p.matcher(str); 
+        
+
+49.  Which of the following correctly defines a repetition operator? 
+
+        B.  A symbol in regular expressions that indicates the number of occurrences a specified 
+        character appears in a matching string 
+        
  
-12.  True or False:  An example of two tier architecture would be a client application working 
-with a server application.  
-A.  True 
-B.  False 
- 
-13.  Which of the following are files that must be uploaded to a web server to deploy a Java 
-application/applet?  (Choose Three) 
-A.  .java files 
-B.  HTML files 
-C.  jar files 
-D.  JNLP files 
-E. SQL files 
- 
-14.  Which of the following is an attribute of a three tier architecture application? 
-A.  An application of that type has a client and server only 
-B.  A complex application that includes a client, a server and database 
-C.  An application of that type runs on a single computer 
-D.  All of the above 
-E. None of the above
+50.  Your teacher asks you to write a segment of code that returns true if String str contains 
+zero or one character(s) and false otherwise. Which of the following code segments 
+completes this task?  (Choose Two) 
+        
+        A.  if( str.length() == 0 || str.length() == 1) 
+        { return true;} 
+        return false; 
+        D.  return str.matches(".?");

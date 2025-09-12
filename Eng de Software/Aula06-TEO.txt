@@ -1,0 +1,39 @@
+Aula 06 (TEORIA) - Diagramas UML
+--------------------------------------------
+
+Unified Modeling Language – UML:
+
+O quê é?
+• Linguagem de Modelagem Unificada, composta por uma
+família de notações gráficas, apoiada por um metamodelo
+único, que ajuda na descrição e no projeto de sistemas de
+software
+• Voltada principalmente para projetos construídos em cima dos princípios da OO
+• Utilizada ao longo de todo o processo de desenvolvimento de sistemas de software, mais intensamente nas fases de: Levantamento de Requisitos, Esboço, Projeto, Programação(construção) eTestes
+
+
+Os Diagramas da UML:
+• Diagramas Estruturais da UML 2.0:
+	• Diagrama de Classes: se dá pela formação do conjunto de informações sobre
+determinadas classes, que, unidas entre si, formam um
+sentido geral do projeto;
+	• Diagrama de Objetos: representa os objetos de um diagrama de classes em um
+determinado instante de tempo, representando suas
+instâncias e seus relacionamentos;
+	• Diagrama de Componentes: mostra as ferramentas de que os componentes são feitos, como arquivos de código fonte, bibliotecas de programação ou tabelas de bancos de dados;
+	• Diagrama de Implantação: mostra o layout físico de um sistema, revelando quais partes
+do software são executadas em quais partes do hardware. Define como as máquinas estarão conectadas e através de quais protocolos se comunicarão;
+	• Diagrama de Pacotes: tem o objetivo de transformar as classes em pacotes (usa critérios subjetivos para agrupar as classes em pacotes, a depender da necessidade do projeto);
+	• Diagrama de Estrutura Composta: modela colaborações, que descrevem uma visão de um conjunto de entidades cooperativas interpretadas por instâncias que cooperam entre si para executar uma função específica -> EXEMPLO: Um diagrama de estrutura composta para um caixa eletrônico (ATM) mostraria que ele é composto por partes como processador, memória, leitor de cartão e impressora, e as portas seriam os pontos por onde essas partes se comunicam entre si e com o usuário;
+	• Diagrama de Perfil: destina-se a criar uma visão (metamodelo) do relacionamento entre classes para atender determinado domínio;
+
+• Diagramas Comportamentais da UML 2.0:
+	• Diagrama de Casos de Uso: mostra um conjunto de casos de uso e atores (um tipo
+especial de classe) e seus relacionamentos. Importantes principalmente para organização e
+modelagem dos comportamentos de um sistema;
+	• Diagrama de Sequência: é um diagrama de interação que enfatiza a ordem temporal das mensagens, de forma dinâmica;
+	• Diagrama de Comunicação ou Colaboração: exibe a interação entre os objetos, consistindo de um conjunto de objetos e seus relacionamentos, incluindo as mensagens que podem ser trocadas entre eles;
+	• Diagrama de Transição de Estados: mostra uma máquina de estados, que consiste de estados, transições, eventos e atividades. Esse diagrama enfatiza principalmente a mudança entre os estados e o comportamento de um objeto entre esses estados (ideal para sistemas reativos);
+	• Diagrama de Atividades: enfatiza o fluxo de controle de uma atividade para outra, sendo usado para ilustrar a visão dinâmica de um sistema. Mostra um conjunto de atividades, o fluxo sequencial ou ramificado de uma atividade para outra e os objetos que realizam ou sofrem ações;
+
+VEJA CADA DIAGRAMA NO MATERIAL PRA TER UMA IDEIA MELHOR DO SEU FUNCIONAMENTO: https://imt.instructure.com/courses/1330/files/446038?module_item_id=78971

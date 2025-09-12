@@ -1,0 +1,49 @@
+Aula 06 - Linguagens Não Regulares
+--------------------------------------------
+
+Exemplo: 
+A linguagem 𝐵 = {0𝑛1𝑛 ∣ 𝑛 ≥ 0} não consegue ser reconhecida por
+nenhum AFD, pois ele teria que ter a capacidade de “lembrar” todos os zeros
+considerados anteriormente, já que o valor de 𝑛 é variável. Isso implica que o AFD
+deixaria de ter um número finito de estados (cadeia infinita é impossível de ser regular)
+
+Lema do Bombeamento para Linguagens Regulares:
+- Teorema usado pra provar se uma linguagem é regular ou não;
+- O teorema estabelece que linguagens regulares possuem uma propriedade
+especial;
+- A propriedade estabelece que todas as cadeias de uma linguagem podem ser
+“bombeadas” se elas possuírem pelo menos um tamanho denominado comprimento de bombeamento (isso significa que cada cadeia contém uma seção que pode ser repetida um número qualquer de vezes e a cadeia ainda pertença à linguagem.);
+- Se a cadeia não possui tal propriedade mencionada acima, ela é NÃO REGULAR;
+
+**Aplicação do lema do bombeamento**:
+Se 𝐴 é uma linguagem regular, então existe um número 𝑝 (comprimento de
+bombeamento) onde, se 𝑠 é qualquer cadeia de 𝐴 de comprimento pelo menos 𝑝,
+então 𝑠 pode ser dividida em três partes, 𝑠 = 𝑥𝑦𝑧, satisfazendo as seguintes
+condições:
+1. Para cada 𝑖 ≥ 0, 𝑥𝑦𝑖𝑧 ∈ 𝐴,
+2. |𝑦| > 0,
+3. |𝑥𝑦| ≤ 𝑝.
+
+	■ Ideia da prova
+	• Considerar 𝑀 = (𝑄, Σ, 𝛿, 𝑞1, 𝐹) um AFD que reconhece a linguagem 𝐴. Atribuindo o
+	comprimento de bombeamento 𝑝 igual ao número de estados de 𝑀, se |𝑠| ≥ 𝑝,
+	então ela pode ser dividida em 𝑥𝑦𝑧, como apresentado no lema;
+	• Seja |𝑠| = 𝑛. Como 𝑠 é aceita por 𝑀, isso significa que o comprimento da
+	sequência estados que foram transitados até o estado de aceitação é 𝑛 + 1
+	• Na computação realizada pelo autômato, por 𝑀, pode‐se identificar três partes que 		constituem 𝑠 = 𝑥𝑦𝑧: 𝑥 é computada antes de 𝑦, que é a parte de sai de um estado, passa 		por diversos outros e depois retorna ao estado de partida, e, depois, 𝑧, que é a parte que 		é computada até o estado final do autômato.
+	• Então
+		⋄ O AFD reconhece cadeias do tipo 𝑥𝑦𝑖 𝑧, com 𝑖 > 0 e cadeias do tipo 𝑥𝑧, para 𝑖=0
+		⋄ Se |𝑦| > 0, ocorrerá uma repetição de estados saindo e voltando ao estado de 		partida
+		onde se iniciou 𝑦 (condição 2 do slide 22);
+		⋄ Se |𝑦| > 0 então leva o autômato à uma sequência de estados maior que 𝑝. 		Assim, verifica‐se 		que |𝑥𝑦| ≤ 𝑝 (condição 3 do slide 22)
+
+
+	■ Passos para provar que uma linguagem é não regular
+	(1) Assumir que a linguagem é regular de modo a obter uma contradição;
+	(2) Utilizar o Lema do Bombeamento para garantir a existência de um comprimento
+	de bombeamento 𝑝, de modo que todas as cadeias de tamanho maior ou igual à 𝑝
+	sejam “bombeadas”;
+	(3) Depois, encontrar uma cadeia 𝑠 da linguagem que não possa ser bombeada;
+	(4) Por fim, demonstrar que 𝑠 não pode ser bombeada considerando todos os
+	possíveis meios de dividi‐la em 𝑥, 𝑦 e 𝑧.
+	
