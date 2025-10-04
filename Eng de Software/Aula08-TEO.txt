@@ -1,0 +1,82 @@
+Aula 08 - Estratégias de Teste de Software (TEORIA)
+----------------------------------------------------------------
+
+O quê é um Teste:
+- Num contexto geral, refere-se a um procedimento ou uma atividade realizada para avaliar ou verificar algo, geralmente para determinar sua qualidade, desempenho ou funcionalidades;
+- Auxiliam na tomada de decisões e na garantia da qualidade e segurança em uma variedade de situações;
+
+Teste de Software:
+• Avaliação do funcionamento de um programa de
+computador para verificar se ele está livre de erros e atende
+aos requisitos;
+• Processos e atividades sistemáticas realizados para avaliar
+um programa de computador ou sistema de software com o
+objetivo de identificar erros, defeitos e/ou falhas, bem como
+verificar se ele atende aos requisitos e às expectativas dos
+usuários;
+• Desempenham um papel crucial no desenvolvimento de
+software, por ajudar a garantir qualidade, confiabilidade e
+segurança aos seus usuários
+
+Objetivos dos Testes de Software:
+1. Identificação de Defeitos;
+2. Validação de Requisitos;
+3. Garantia de Qualidade;
+4. Melhoria Contínua;
+5. Aplicação de Diferentes Tipos, em Diferentes Níveis e Ciclos;
+de Vida do Desenvolvimento;
+6. Geração de Documentação e Relatórios
+
+Aspectos abordados em Testes de Software:
+1. Objetivos de Teste: ACIMA;
+2. Escopo de Teste: especificar quais partes do software serão testadas e quais serão excluídas;
+3. Estratégia de Teste de Software: determinar a abordagem de testes, por exemplo
+	• Testes de Caixa Preta;
+	• Testes de Caixa Branca;
+	• Testes de Regressão;
+	• Testes de Desempenho;
+	• Testes de Usabilidade; e
+	• Outros...
+4. Cronograma de Teste: estabelecer quando os testes serão realizados em relação ao Ciclo de Desenvolvimento de Software;
+5. Recursos Necessários: determinar quais os recursos necessários para realizar os testes (de hardware ou software)
+6. Critérios de Aceitação: predefinir e estabelecer critérios claros que determinarão
+	• Quando os testes são considerados bem-sucedidos;
+	• Quando um sistema está pronto para ser lançado ou implantado
+7. Estratégia de Relatórios: especificar como os resultados dos testes serão
+	• Documentados; 
+	• Comunicados à equipe de desenvolvimento e outras partes interessadas
+8. Gestão de Defeitos: definir como os defeitos identificados serão registrados, rastreados, priorizados e corrigidos;
+9. Revisão e Atualização;
+
+Sobre Estratégias de Teste de Software:
+• Garantem que o software seja testado de maneira
+adequada, eficiente e abrangente, ajudando a identificar e
+corrigir problemas antes de ir para o ambiente de produção;
+• Contribuem para a melhoria da qualidade do software e a
+entrega bem-sucedida de um produto final;
+• A escolha da estratégia depende das necessidades e
+características do projeto de desenvolvimento de software e
+dos objetivos dos testes definidos;
+• Várias estratégias podem ser combinadas, garantindo
+cobertura completa dos testes e a qualidade do software
+
+Principais Estratégias de Teste de Software:
+1. Teste de Unidade (componentes do software testados individualmente)
+2. Teste de Integração (estar a interação entre diferentes unidades ou módulos do software)
+3. Teste de Sistema (o sistema completo é testado em sua totalidade para garantir que ele atenda aos requisitos e funcione conforme o esperado)
+4. Teste de Aceitação (o objetivo é garantir que o sistema atenda aos critérios de aceitação);
+5. Teste de Regressão (verifica se as modificações introduziram novos defeitos ou afetaram negativamente outras funcionalidades);
+6. Teste de Desempenho (avalia o desempenho do software em termos de velocidade, escalabilidade, carga e estabilidade);
+7. Teste de Segurança (identifica vulnerabilidades de segurança --> Q.A);
+8. Teste de Usabilidade (avalia a interface e experiência do usuário );
+9. Teste de Compatibilidade (verifica o funcionamento do software em diferentes ambientes, navegadores, dispositivos, etc);
+10. Teste de Conformidade (verifica se o software segue os padrões da indústria);
+
+Testes de Caixa-Branca e Caixa-Preta de Software:
+• Referem-se ao modo como os testes são projetados e
+executados em relação ao conhecimento interno do sistema;
+• são abordagens de teste que podem ser aplicadas a
+diferentes níveis de teste, incluindo os testes de unidade,
+testes de integração, testes de sistema, entre outros;
+• "White Box Testing": neles, o testador tem conhecimento sobre o código-fonte do software e pode verificar toda a lógica interna, caminhos e erros do mesmo de forma livre e completa;
+• "Black Box Testing": neles, o testador não tem conhecimento sobre o código-fonte do software e sem ver sua implementação interna, concentrando-se em testar as funcionalidades com base nos requisitos, especificações e comportamentos esperados, sem se preocupar com os detalhes dos códigos que as executam;

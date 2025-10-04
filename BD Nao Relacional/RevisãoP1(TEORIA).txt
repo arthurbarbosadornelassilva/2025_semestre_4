@@ -1,0 +1,402 @@
+BANCO DE DADOS NoSQL - REVISÃO PARA P1 (TEORIA):
+-------------------------------------------------------------------------
+
+1 - REVISÃO DO MODELO RELACIONAL (características e conceitos gerais):
+
+- Conceitos simples (relações, atributos, tuplas, comínios, etc);
+- Não considera aspectos físicos de armazenamento, acesso e desempenho;
+- Base para a maioria dos SGBDs que dominam o mercado
+
+Características do Modelo Relacional:
+	- Estrutura dos dados
+		 Conceito do modelo: domínio, atributo, relação, chave, tupla, instância
+    
+	- Integridade: Restrições básicas para dados e relacionamentos 
+		- É uma regra que deve ser obedecida em todos os estados válidos da base de dados;
+		- Garantem que os dados refletem corretamente a realidade modelada;
+		- Semântica ou domínio: conjunto de valores que um atributo pode assumir;
+
+		- Integridade de Entidade
+   			- Garantia de acesso a todos os dados sem ambiguidade;
+    			- Atributos pertencentes a chave-primária de uma relação não podem ter valor nulo;
+    			- A chave primária representa uma instância de entidade na base de dados;
+		- Integridade de Chave
+    			- Os valores de uma chave primária são únicos, não se repetem;
+    			- De outra forma: não podem existir duas ou mais linhas com o mesmo valor de chave primária em uma tabela;
+		- Semântica (Integridade de Domínio)
+    			- São regras de negócio implementadas sobre o esquema do banco de dados;
+		- Integridade Referencial
+    			- Chave estrangeira (FK);
+    			- Garantia de relacionamentos válidos;
+    			- Os valores que aparecem na FK devem aparecer na PK da relação referenciada, OU ter o valor NULO;
+		- Restrições de atualização
+    			- Inserção: insere tuplas em uma relação
+    			- Pode violar 4 restrições de integridade: integridade de domínio, integridade de chave, integridade de entidade e integridade referencial;
+    			- Exclusão: exclui tuplas de uma relação;
+   			 - Atualização: altera os valores de atributos nas tuplas existentes;
+		- Ações para evitar uma operação que viole as restrições de integridade referencial
+    			- RESTRICT
+			- CASCADE
+			- SET NULL
+			- SET DEFAULT
+
+	- Manipulação: linguagens formais (álgebra relacional) & linguagem SQL
+
+Propriedades das relações:
+    	1. Não existem tuplas em duplicata, as tuplas são únicas;
+    	2. Tuplas não são ordenadas de cima para baixo;
+    	3. Atributos não são ordenados da esquerda para a direita;
+    	4. Cada tupla contém exatamente um valor para cada atributo;
+
+Classes de Comandos SQL
+    - DDL
+        - Linguagem de Definição de Dados;
+        - Usada para definição dos esquemas (CREATE, ALTER, DROP);
+    - DML
+        - Linguagem de Manipulação de Dados;
+        - Utilizada pelos usuários para manipulação dos dados (inclusão, alteração e exclusão);
+    - DCL
+        - Linguagem de Controle de Dados;
+        - Utilizada para conceder e retirar privilégios de usuários de BD em objetos de BD (GRANT e REVOKE);
+    - DQL
+        - Linguagem de Consulta de Dados;
+        - Usada para recuperação de dados (SELECT);
+    - TCL
+        - Linguagem de Controle de Transação;
+        - Utilizada para lidar com transações no banco de dados (COMMIT e ROLLBACK);
+
+-----------------------------------//--------------------------------------//-------------------------------------------------//-----------------------------------------------//
+
+
+2 - BANCO DE DADOS NoSQL & BIG DATA:
+
+
+## Big Data
+
+O quê significa:
+	 Big Data:
+   	 - Big Data são dados com maior variedade (diferentes formatos) que chegam em volumes crescentes (tamanho) e com velocidade cada vez maior (gerados em tempo real);
+   	 - De forma simplificada, Big Data é um conjunto de dados maior e mais complexo, especialmente de novas fontes de dados;
+   	 - Esses conjuntos de dados são tão volumosos que o software tradicional de processamento de dados simplesmente não consegue gerenciá-los;
+	 - No entanto, esses grandes volumes de dados podem ser usados para resolver problemas de negócios que você não conseguiria resolver antes;
+	 - Big Data designa dados e processos cuja escala, distribuição, diversidade e velocidade de criação requer o uso de novas tecnologias de armazenamento, processamento e análise dos dados, isto envolve competências em computação, matemática e negócios;
+	Ciência de Dados x Big Data:
+    	- Ciência de dados
+        		- Combina estatística, matemática, programação, inteligência artificial e resolução de problemas para capturar dados de maneiras engenhosas, com uma visão diferente para encontrar padrões e realizar análises, juntamente com as atividades de limpeza, preparação e organização dos dados;
+		- Em resumo, métodos científicos para transformar, extrair e analisar informações do grande volume de dados;
+	- Big data
+   		 - Conjunto de técnicas e ferramentas capazes de armazenar, extrair, organizar e transformar grandes volumes de dados, gerados em diferentes formatos e grande velocidade em informações que possibilitam uma análise ampla e em tempo hábil;
+   		 - Em resumo, infra-estrutura de Tecnologia (ferramentas para armazenamento, processamento, análise e visualização);
+
+
+##Banco de Dados NO-SQL
+
+O que significa:
+    - É uma denominação para bancos de dados não-relacionais, isso não quer dizer que seus modelos não possuem relacionamentos e sim que não são orientados a tabelas;
+    - Not Only SQL (Não apenas SQL)
+    - A tecnologia NoSQL foi iniciada por companhias líderes da Internet;
+
+Características Principais:
+	- Escalabilidade horizontal
+   		 - A escalabilidade horizontal consiste em aumentar o número de máquinas disponíveis;
+   		 - A escalabilidade horizontal em modelos relacionais seria inviável devido a concorrência;
+   		 - Como nos modelos NoSQL não existe bloqueios, esse tipo de escalabilidade é a mais viável;
+	- Ausência de esquema ou esquema flexível
+  		  - Apresentam ausência de esquema ou esquema flexível, isso permite uma fácil aplicação da escalabilidade e também um aumento na disponilibilidade dos dados;
+  		  - Mas também devido a essa ausência, não há garantia da integridade dos dados;
+	- Suporte a repliacação
+   	 	- Permitem a replicação de uma forma nativa o que provém uma escalabilidade maior e também uma diminuição do tempo gasto para a recuperação de informações;
+	- API Simples
+ 		   - Para que o acesso às informações seja feito da forma mais rápida possível APIs são desenvolvidas para que qualquer aplicação possa ter acesso aos dados do SGBD;
+	- Nem sempre é consistente
+ 		   - Os bancos de dados NoSQL nem sempre conseguem se manter consistentes, ou seja, o valor do dado lido nem sempre é o mais atual;
+	- Alta disponibilidade
+  		  - Confiabilidade, recuperabilidade, detecção rápida de erros e operações contínuas;
+	- Modos de armazenamento
+   		 - Temos os sistemas que: mantêm suas informações em memória realizando persistências ocasionais, mantêm suas informações em disco e são configuráveis;
+
+ Existem 4 categorias de SGBDs NoSQL:
+	- Sistemas baseados em armazenamento chave-valor
+    		- Coleção de chaves únicas associada a um valor, que pode ser qualquer tipo (binário, string);
+	- Sistemas orientados à coluna
+		    - Famílias de colunas (um repositório para colunas, análogo a uma tabela do Modelo Relacional) e supercolunas (compostas por arrays de colunas);  
+	- Sistemas baseados em grafos
+		    - Banco de dados baseado em grafos, nele temos as entidades chamadas de vértices (ou node) que são ligadas entre elas pelas arestas (ou relationships) cada um podendo guardar dados entre os relacionamentos e cada relacionamento pode ter uma direção;
+	- Sistemas orientados a documentos
+		    - Os documentos são as unidades básicas de armazenamento e estes não utilizam qualquer tipo de estruturação pré-definida;
+		    - São baseados em JSON (JavaScript Object Notation);
+
+-----------------------------//--------------------------------------//----------------------------------------//---------------------------------------//----------------------------------------//
+
+
+3 - CONTROLE DE CONCORRÊNCIA & TRANSAÇÕES EM BANCOS DE DADOS (ABORDANDO CONCEITOS DE ACID, BASE & CAP):
+
+## Controle de Concorrência
+
+Problema:
+    - Escalas não serializáveis podem violar a consistência do BD (Uma escala serializável em banco de dados (BD) é um agendamento de execução de transações simultâneas que produz um resultado consistente, como se as 	transações tivessem sido executadas uma a uma (em série), mantendo a integridade do banco de dados)
+    - Forçar um comportamento sequencial fazendo uma transação esperar que a outra execute determinadas operações;
+    - DeadLock (impasse): uma transação terá que ser deseita para que outra seja realizada (rollback);
+
+    - Protocolos com base em bloqueios (lock)
+        - Conjunto de regras que determina quando uma transação pode ou não bloquear ou desbloquear um item de dados;
+        - Restringe o número de escalas possíveis (serializadas);
+        - Pode obrigar que o acesso a dados seja feito de maneira mutuamente exclusiva preservando o isolamento;
+        - Enquanto uma transação acessa um item de dados, nenhuma outra pode modificá-lo;
+        - As transações devem solicitar o bloqueio de modo apropriado, dependendo do tipo de operação realizada;
+        - O gerenciador de controle de concorrência concede (grants) o bloqueio para a transação (ela pode ter que esperar);
+
+   - Tipos de bloqueios
+        - Compartilhado: Se uma transação Ti obteve um bloqueio compartilhado (denotado por S de share) sobre o item Q, então Ti pode ler, mas não escrever Q;
+        - Exclusivo: Se uma transação Ti obteve um bloqueio exclusivo (denotado por X de eXclusive) sobre o item Q, então Ti pode tanto ler como escrever Q;
+	
+	EXEMPLOS:
+	- Instruções
+    		- lock-S(Q): bloqueio no modo compartilhado;
+    		- lock-X(Q): bloqueio no modo exclusivo;
+    		- unlock(Q): remove todos os bloqueios;
+	- Para manter o acesso a um item de dado, a transação precisa primeiro bloqueá-lo. Se já estiver incompativelmente bloqueado, o gerenciador não concederá o bloqueio até que todos os bloqueios incompatíveis sejam desfeitos;
+
+   - Tipos de protocolo de bloqueio:
+        - Protocolo de bloquieo em duas fases (Two-Phase Locking ou 2PL)
+    	- Garante a serialização;
+	- Exige que cada transação emita suas solicitações de bloqueio e desbloqueio em duas fases: fase de expansão e fase de encolhimento;
+	
+	* FASES DO 2PL:
+		- Fase de expansão ou crescimento: uma transação pode obter bloqueios, mas não pode liberar nenhum;
+		- Fase de encolhimento ou retrocesso: uma transação pode liberar bloqueios, mas não consegue obter nenhum bloqueio novo;
+		- Não garante a ausência de deadlock;
+		- Pode ocorrer o rollback em cascata;
+		
+        - Protocolo de commit em duas fases Distribuído
+    	- Two-phase commit protocol: 2PC;
+    	- A ação de commit deve ser “instantânea” e indivisível;
+    	- Pode ser necessária a cooperação de muitos processos, em máquinas distintas, cada qual com um conjunto de objetos envolvidos na transação;
+    	- Um dos processos é designado como coordenador (normalmente o próprio cliente que inicia a transação);
+    	- Os demais processos são designados como participantes;
+    	- Toda ação é registrada em log, armazenado em memória estável, para o caso de falha durante o protocolo;
+
+	* FASES DO 2PC:
+		- Fase 1: Votação
+    		- O coordenador envia mensagem VOTE_REQUEST para todos os participantes e aguarda as respostas;
+    		- Cada participante responde VOTE_COMMIT ou VOTE_ABORT para o coordenador;
+		- Fase 2: Decisão
+    		- Se todos os participarem tiverem respondido VOTE_COMMIT, o coordenador envia para todos os participantes um GLOBAL_COMMIT senão envia um GLOBAL_ABORT;
+    		- Cada participante confirma ou aborta a sua transação local, conforme receba GLOBAL_COMMIT ou GLOBAL_ABORT, respectivamente;
+
+
+## Transações em Bancos de Dados Relacionais e NO-SQL
+
+- Introdução a transações
+    - SGBD
+        - Sistema de processamento de operações de acesso ao BD;
+    - SGBDs são em geral multi-usuários
+        - Processam simultaneamente operações disparadas por vários usuários;
+            - Deseja-se alta disponibilidade e tempo de resposta
+            pequeno;
+        - Execução intercalada de conjuntos de operações;
+    - Operações são chamadas transações;
+
+- Conceito de transação
+    - Unidade lógica de processamento em um SGBD;
+    - Composta de uma ou mais operações;
+        - Seus limites podem ser determinados em SQL;
+    - De forma abstrata e simplificada, uma transação pode ser encarada como um conjunto de operações de leitura e escrita de dados;
+
+- Estados de uma transação
+    - Uma transação é sempre monitorada pelo SGBD quanto ao seu estado;
+        - Que operações já fez? Concluiu suas operações? Deve abortar?
+    - Estados de uma transação;
+        - Ativa, Em processo de efetivação, Efetivada, Em falha, Em Efetivação(Concluída);
+        - Respeita um Grafo de Transição de Estados;
+
+- Propriedades de uma transação nos SGBDs Relacionais
+    - Requisitos que sempre devem ser atendidos por uma transação;
+    - Chamadas de propriedades ACID: Atomicidade, Consistência, Isolamento e Durabilidade (Persistência);
+	
+- Sobre ACID:
+	- Atomicidade
+    		- Princípio do “Tudo ou Nada”;
+        			- Ou todas as operações da transação são efetivadas (commit) com sucesso no BD ou nenhuma delas se efetiva (rollback) (preservar a integridade do BD);
+    		- Responsabilidade do subsistema de recuperação contra falhas (subsistema de recovery) do SGBD;
+        			- Desfazer (rollback) as ações de transações parcialmente executadas;
+    		- Deve ser garantida, pois uma transação pode manter o BD em um estado inconsistente durante a sua execução;
+	- Consistência
+   		 - Uma transação sempre conduz o BD de um estado consistente para outro estado também consistente;
+    		- Responsabilidade do conjunto
+        			- DBA: definir todas as RIs para garantir estados e transições de estado válidos para os dados;
+        		- Subsistema de recovery;
+            			- Desfazer as ações da transação que violou a integridade;		
+
+	- Isolamento
+   		 - No contexto de um conjunto de transações concorrentes, a execução de uma transação Tx deve funcionar como se Tx executasse de forma isolada;
+        			- Tx não deve sofrer interferências de outras transações executando concorrentemente;
+    		- Responsabilidade do subsistema de controle de concorrência (scheduler) do SGBD;
+       			 - Garantir escalonamentos sem interferências;
+
+	- Durabilidade
+    		- Deve-se garantir que as modificações realizadas por uma transação que concluiu com sucesso persistam no BD;
+        			- Nenhuma falha posterior ocorrida no BD deve perder essas modificações;
+    		- Responsabilidade do subsistema de recovery;
+       			- Refazer transações que executaram com sucesso em caso de falha no BD;
+
+- Serialização
+    - O sistema gerenciador de banco de dados deve controlar a execução concorrente de transações para assegurar que o estado do banco de dados permaneça consistente;
+    - A consistência do banco de dados, sob execução concorrente, pode ser assegurada garantindo-se que qualquer escala executada concorrentemente tenha o mesmo efeito de outra que tivesse sido executada sem qualquer concorrência;
+    - Isto é, uma escala de execução deve, de alguma forma, ser equivalente a uma escala seqüencial (transações sem intercalação, executadas de forma serial);
+    - Formas de equivalência entre escalas de execução podem ser verificadas sob duas visões:
+        - Por conflito
+	* Diz-se que duas transações entram em conflito quando transações diferentes agem em um mesmo item de dados, e pelo menos uma dessas operações é de escrita (write);
+        - Por visão;
+
+
+- Propriedades Transacionais nos BDs NO-SQL:
+    - Bancos de dados relacionais tem problemas
+        	- Escalabilidade vertical (adicionar recursos de hardware a uma mesma máquina ( + memória, + armazenamento, + processadores, + velocidade de processamento) → limite físico computacional e alto custo);
+        	- Escalabilidade horizontal (particionar os dados em várias máquinas, torna a manutenção das tabelas bem difícil e complicado; depende da fragmentação se é horizontal (linhas) ou vertical (colunas));
+        	- Alto volume de dados com baixa velocidade de resposta
+	- Os dados mudam constantemente
+               	- Protocolos de bloqueio de efetivação em duas fases distribuído (para preservar as propriedades ACID, em especial a consistência, aumentam consideravelmente o tempo de resposta do sistema → latência muita alta implica em baixa disponibilidade);
+
+    - Bancos de dados NO-SQL precisam de alta disponibilidade e redundância (mesmo dado em muitos nós) → não é possível usar propriedades ACID;
+
+
+- Propriedades BASE:
+    - Basically Available - Basicamente Disponível: disponibilidade é prioridade, o sistema deve estar em funcionamento na maior parte do tempo;
+    - Soft-State - Estado Leve: não precisa ser consistente o tempo todo;
+    - Eventually Consistent - Eventualmente consistente: consistente em algum momento não determinado, a consistência nem sempre é mantida para todos os nós, nós podem não ter a mesma versão dos dados;
+    - Diferenças ACID / BASE:
+
+	ACID                                                   | BASE
+-------------------------------------------------------+---------------------------------------------------------
+Consistência forte                                     | Fraca consistência
+Isolamento                                             | Disponibilidade em primeiro lugar
+Concentra-se em "commit"                               | Melhor esforço em disponibilidade para partições
+Transações aninhadas                                   | Respostas aproximadas
+Conservador (pessimista, bloqueia todos os registros   | Agressivo (otimista, detectam os conflitos e depois faz
+para evitar conflitos)                                 | o tratamento)
+Evolução difícil (por exemplo, esquema)                | Evolução mais fácil
+
+- Teorema CAP:
+    - O Teorema CAP explica por que sistemas modernos (como bancos distribuídos globais) não podem ser 100% consistentes, 100% disponíveis e 100% tolerantes a falhas ao mesmo tempo
+    - Sempre é preciso escolher duas dessas propriedades e abrir mão de uma:
+
+	1. Consistência (Consistency)
+		- Em bancos de dados relacionais tradicionais (ACID), a consistência garante que após uma transação confirmada (commit), todos os clientes enxergarão o mesmo valor atualizado, independentemente do nó de leitura (exemplo: Se uma transação de transferência bancária confirma que R$100 saíram da conta A e foram para a conta B, qualquer cliente que consulte A ou B verá os valores atualizados).
+		- Em sistemas distribuídos AP (Disponibilidade + Partição), essa consistência pode ser eventual: a leitura pode retornar dados antigos até que todos os nós sejam sincronizados.
+
+	2. Disponibilidade (Availability)
+		- Um sistema disponível garante que mesmo que alguns nós falhem, ainda é possível ler e escrever dados em outros nós que estejam ativos.
+		- Exemplo em transações: Um banco digital que não pode parar nunca precisa garantir que o cliente consiga registrar uma compra com cartão mesmo que parte do sistema esteja fora do ar. A operação pode ser aceita localmente e depois sincronizada quando o nó voltar.
+		- O custo: pode-se ler dados desatualizados, mas o sistema nunca "cai".
+
+	3. Tolerância a Particionamento (Partition Tolerance)
+		- Em bancos de dados distribuídos, partições podem ocorrer quando a rede falha e nós ficam isolados em grupos.
+		- O sistema precisa continuar funcionando mesmo sem comunicação total entre os nós.
+		- Exemplo em transações: Em um marketplace global, se o datacenter da Europa perde contato com o dos EUA, cada região deve continuar processando pedidos localmente. Depois, quando a rede voltar, os dados são sincronizados (pode gerar conflitos que precisarão ser resolvidos).
+
+- Sistemas CAP aplicados em Bancos de Dados
+	📌 CA (Consistência + Disponibilidade)
+	Não toleram partições → funcionam apenas em sistemas centralizados (um único nó ou cluster muito coeso).
+	Exemplo: Bancos de dados relacionais tradicionais (MySQL, PostgreSQL em modo standalone).
+	Em transações: garantem ACID, mas se o servidor cair, o sistema todo fica indisponível.
+
+	📌 CP (Consistência + Particionamento)
+	Mantêm consistência mesmo em falha de rede, mas podem sacrificar a disponibilidade (o sistema pode ficar indisponível até sincronizar).
+	Exemplo: HBase, MongoDB com Write Concern alto, sistemas de consenso como Zookeeper.
+	Em transações:
+	Uma transferência bancária crítica pode ser bloqueada até que todos os nós confirmem, garantindo que nunca haja saldo incorreto.
+
+	📌 AP (Disponibilidade + Particionamento)
+	Nunca ficam indisponíveis, mas aceitam abrir mão da consistência forte, adotando consistência eventual.
+	Exemplo: Cassandra, DynamoDB, CouchDB.
+	Em transações:
+	Redes sociais: você publica uma foto e um amigo pode demorar alguns segundos para vê-la em outro servidor.
+	O importante é que o sistema nunca para.
+
+	🔹 Modelos de Distribuição relacionados a transações
+
+	Particionamento (Sharding)
+	Divide os dados entre servidores diferentes → transações podem precisar consultar múltiplos shards.
+
+	Replicação
+	Copia os dados → garante maior disponibilidade de leitura, mas pode gerar conflitos de escrita.
+
+	Particionamento + Replicação
+	Combina os dois → muito usado em bancos NoSQL modernos.
+
+	🔹 Quóruns em transações distribuídas
+
+	Quórum de escrita: uma transação só é considerada confirmada se atingir N confirmações de nós.
+		W = quórum de escrita
+			 número de nós que confirmam uma escrita
+		N = fator de replicação dos dados
+			 número de réplicas
+		Para garantir escritas com consistência forte, a seguinte fórmula precisa ser respeitada:
+			W > N / 2
+		O número de nós que confirmam uma escrita precisa ser maior que a metade do número de réplicas do item a ser escrito, ou seja, a maioria
+
+	Quórum de leitura: garante que uma leitura só é válida se consultar nós suficientes para evitar dados antigos.
+	Isso dá mais previsibilidade em consistência eventual.
+		Quantos nós é preciso contatar para se ter a garantia de que o valor mais recente para um item de dado foi lido?
+			 A resposta depende do quórum de escrita W
+		 R = quórum de leitura
+			 número de nós contatados para a leitura
+		 Para garantir leituras altamente consistentes, a seguinte fórmula precisa ser respeitada:
+			R + W > N
+		 A fórmula garante que, entre os R nós de réplicas contatados, haverá pelos menos 1 que tem a versão mais nova do item de dado
+		
+- Tabela Comparativa CAP:
+
+                          TEORIA CAP
+                               |
+        -------------------------------------------------
+        |                        |                      |
+   CONSISTÊNCIA (C)        DISPONIBILIDADE (A)    PARTICIONAMENTO (P)
+        |                        |                      |
+  Leitura sempre do        Sempre responde,       Sistema continua
+  dado mais recente        mesmo se nós falharem  funcionando mesmo
+  (consistência forte).    (nunca fica offline).  em falhas de rede.
+        |                        |                      |
+        |                        |                      |
+        -------------------------------------------------
+                               |
+                     Não é possível garantir
+                  C + A + P ao mesmo tempo
+                               |
+     -------------------------------------------------------
+     |                        |                            |
+    CA                       CP                           AP
+(Consistência +            (Consistência +            (Disponibilidade +
+ Disponibilidade)           Particionamento)           Particionamento)
+     |                        |                            |
+  - Bancos ACID            - Consistência forte,       - Sempre disponível
+  - MySQL, PostgreSQL        mas menor                - Consistência eventual
+  - Funciona bem em          disponibilidade          - Cassandra, DynamoDB
+    ambiente centralizado   - Ex: HBase, Zookeeper     - Rede sociais, apps
+  - Se o servidor cai,      - Útil p/ dados críticos     globais
+    sistema todo cai          (ex: leilões)              (mensagens, posts)
+
+
+---------------------------------------------------//-----------------------------------------------//------------------------------------------------//------------------------------------------//
+
+
+4 - REPLICAÇÃO MASTER-SLAVE
+
+    
+    - A escrita é realizada somente em um servidor chamado Master;
+    - Os demais servidores do Cluster só permitem leitura, Slave;
+    - Confirmação de escrita no Master
+        - Se houver alguma estratégia de confirmação de escrita antes de propagar, a leitura no slave pode ser desatualizada (perdemos a consistência por pouco tempo);
+    - Falhas
+        - Uma falha no master antes da propagação significa perda de dados;
+        - Falha na comunicação não compromete a leitura e escrita no Master, mas a leiturs no Slave será desatualizada;
+    - Aumentar a consistência
+        - No Master, escrita é mais lenta → latência da comunicação;
+        - No Slave, dado salvo somente após confirmação de escrita no Slave → consistência;
+    - Limitações
+        - Limitação: todas as escritas serem realizadas no master;
+        1. Queda na performance com muitas requisições;
+        2. Uma falha no servidor, o serviço será comprometido;
+
+	*Masterless: - Alternativa: muitos bancos NoSQL são baseados na ideia de que qualquer servidor pode receber requisições de leitura e escrita;

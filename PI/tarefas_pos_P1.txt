@@ -1,0 +1,23 @@
+Tarefas a serem realizadas do PI (dentro da Sprint 2):
+
+Edu:
+- Criação do Banco de Dados Relacional para login do admin & professores (FEITO)
+- Criação da tabela de contador no banco de dados
+- Criação da API para comunicação com banco de dados (em Node.js)
+- Criação do script de requisição em Dart
+
+Vitinho:
+- Criação do menu responsivo (com home, dirs, galeria)
+- Criação das pastas dos diretórios (prototipo do Brunao tá maneiro, ele pode se basear)
+- Testar o script de requisição que o Edu fez
+
+Luísa (nova integrante do PI):
+- Aprender sobre o desenvolvimento mobile da aplicação com Flutter
+- Trabalhar a recursividade do sistema
+- Desenvover uma interface intuitiva pro projeto, junto do Vitinho
+
+-----///-----
+
+FAZER DEPOIS DAS PROVAS!!
+
+- Criar as historias referentes a essas tarefas e reavaliar as já existentes

@@ -1,0 +1,303 @@
+Resumo pra P1 - Eng. Software
+--------------------------------------
+
+Aula 01:
+
+- O que é Engenharia de Software e qual é a sua importância no desenvolvimento de soluções tecnológicas?
+	Abordagem sistemática para o planejamento, desenvolvimento e manutenabilidade de um projeto de software (sistemas, aplicações, etc). Esse processo é importante para que o software seja desenvolvido de forma organizada, com qualidade e garantindo que o mesmo possa ser replicado.
+
+- Como a colaboração e o trabalho em equipe são fundamentais para o sucesso de projetos nessa área?
+	Colaboração e trabalho em equipe são fundamentais para o bom desenvolvimento de um projeto, onde ocorre a reunião ideias que aprimoram o projeto, geração de interações interpessoais, resolução de conflitos, etc.
+
+--//--
+
+Aula 02:
+
+Desenvolvimento de Software na Atualidade - Visão Geral:
+- HOJE: utiliza equipes de TI multifuncionais centralizadas e auto-organizadas;
+- Meta: satisfazer os requisitos do cliente, de forma planejada e mantendo bom engajamento da equipe;
+- Objetivo Principal: desenvolver de forma ágil e com qualidade;
+
+Nascimento & Falecimento de um Software:
+- Nascimento de um Software --> definido nos requisitos
+- Morte/ Falecimento de Software --> definida no momento em que deixam de ser criadas atualizações /
+  
+Tipos de Softwares:
+- Softwares de Sistemas (utilizados por outros softwares -> bibliotecas, compiladores, SOs, etc);
+- Softwares de Aplicação (utilizados por pessoas, visando resolver problemas);
+- Softwares de Tempo Real (responde a requisições dentro de um limite de tempo especificado);
+- Softwares Científicos e de Engenharia (apoio, simulação, construção e testes -> ferramentas CASE como Cad, VSCode, etc);
+- Softwares Embarcados (residem dentro de um produto -> carro, micro-ondas, geladeira, etc);
+- Softwares de Prateleira (oferecidos em massa -> jogos, Microsoft Office, etc);
+- Softwares pra Web (disponibilizados por navegador através da internet -> e-commerce, e-learning, etc);
+- Softwares para IA (resolver problemas complexos através de algoritmos probabilísticos -> ChatGPT, Gemini, etc);
+- Softwares para Computação Ubíqua (softwares de aplicação que permitem que pequenos dispositivos móveis);
+- Softwares Abertos (podem ser open source ou livres)
+
+*CASE: Computar-Aided Software Engeneering
+
+O que são softwares legados?
+	Softwares desatualizados, não mais suportados pelos desenvolvedores originais.
+
+ Qual a relação de softwares legados com o desenvolvimento de software?
+	É possível afirmar que softwares legados estão na fase final de seu desenvolvimento, ou seja, já são sucateados ou serão substituídos, exigindo mudanças em sistemas que os utilizam.
+
+Quais são os possíveis problemas dos softwares legados?
+	Por estarem defasados, podem gerar problemas de compatibilidade com sistemas mais recentes, falta de suporte técnico & alto custo de manutenção, vulnerabilidades de segurança, etc.
+
+--//--
+
+Aula 03:
+
+Camadas da Engenharia de Software:
+- Ferramentas (mais interno): apoio automatizado aos processos e métodos, como por exemplo o uso das ferramentas CASE
+- Métodos: as maneiras de conduzir um processo;
+- Processo: conjunto de atividades e resultados associados que geram um produto de software, sendo as fundamentais e comuns a todos os processos;
+- Qualidade (mais externo):  foco da engenharia de software, criar um software total com qualidade;
+
+Processo de Desenvolvimento de Software:
+- Processo é um conjunto de atividades e resultados associados que geram um produto de software;
+- Um modelo de processo de software define um conjunto distinto de atividades, ações, tarefas, marcos e produtos de trabalho que são necessários para fazer engenharia de software com alta qualidade;
+- Atividades fundamentais comuns a todos os modelos de processos de desenvolvimento de software:
+	1. Especificação do Software (requisitos funcionais, não-funcionais e critérios de aceitação)
+	2. Desenvolvimento do Software (etapa de codificação, seguindo os requisistos)
+	3. Validação do Software (etapa de verificação se os requisitos estão sendo seguidos)
+	4. Evolução do Software (manutenção e mutabilidade do software)
+
+
+Pincipais Modelos de Processo de Software Formais:
+- Um modelo de processo para engenharia de software é escolhido com base:
+	• Na natureza do projeto e da aplicação (tipo de software);
+	• Nos métodos e ferramentas a serem utilizados;
+	• Nos controles e nos produtos intermediários e finais a serem entregues
+- Alguns modelos de processos de software são mais adequados do que outros:
+	3.1. Modelo Sequencial Linear (Cascata) *
+	3.2. Modelo Prototipação *
+	3.3. Modelo Incremental *
+	3.4. Modelo RUP *
+	3.5. Modelo Espiral *
+	3.6. RAD (Rapid Application Development) *
+	3.7. Modelo Baseado em Componentes
+	3.8. Modelo de Desenvolvimento Concorrente
+	3.9. Modelo de Métodos Formais
+	3.10. Modelo de Técnicas de 4ª. Geração
+ 
+
+--//--
+
+Aula 04:
+
+Qual a razão de se 'medir' algo?
+
+Não conseguindo medir, não se consegue:
+1. Controlar;
+2. Gerenciar;
+3. Melhorar;
+4. Trabalhar
+
+Tipos de Métricas:
+- Métricas Primárias (apontamentos pontuais):
+	- Apontamentos dos fatos;
+	- Informações objetivas da realidade;
+	- Tendência à expressão numérica;
+	- Exemplos: defeitos, horas trabalhadas, custo, reclamações etc.
+- Métricas Secundárias (apontamentos abstratos):
+	- Indicadores, que expressam comportamentos além dos números;
+	- Resultado de uma relação de: MÉTRICA / FATOR;
+	- Exemplos: densidade de defeitos, defeitos por fase de projeto etc
+- Critérios:
+	- Priorização:
+		grade de importância x urgência;
+	- Características Intrínsecas:
+		natureza e comportamento;
+	- Características Extrínsecas:
+		relacionamento com o contexto da medição
+
+Sobre Métricas de Software: medidas quantitativas ou qualitativas usadas para avaliar diversos aspectos do desenvolvimento, qualidade, manutenção e desempenho de software;
+
+Categorias de Métricas de Software:
+	• Métricas de Processo;
+		✓ Tempo de ciclo de desenvolvimento;
+		✓ Taxa de retrabalho;
+		✓ Taxa de cumprimento de prazos;
+		✓ Taxa de defeito por fase;
+		✓ Eficácia de revisão de código;
+		✓ Índice de satisfação da equipe
+	• Métricas de Produto;
+		✓ Linhas de código;
+		✓ Complexidade ciclomática;
+		✓ Taxa de duplicação de código;
+		✓ Índice de manutenibilidade;
+		✓ Taxa de erros;
+		✓ Cobertura de testes
+	• Métricas de Qualidade;
+		✓ Taxa de defeitos por linha de código;
+		✓ Tempo médio entre falhas;
+		✓ Taxa de falhas em produção;
+		✓ Cobertura de código por testes;
+		✓ Taxa de entregas bem-sucedidas;
+		✓ Número de defeitos críticos;
+		✓ Tempo médio de correção
+	• Métricas de Uso;
+		✓ Taxa de utilização de recursos;
+		✓ Taxa de utilização de funcionalidades;
+		✓ Taxa de conversão;
+		✓ Taxa de abandono;
+		✓ Tempo médio de sessão;
+		✓ Taxa de rejeição;
+		✓ Taxa de retenção de usuários;
+	• Métricas de Projeto;
+		✓ Coeficiente de acoplamento;
+		✓ Índice de coesão;
+		✓ Profundidade de herança;
+		✓ Número médio de parâmetros por função;
+		✓ Tamanho médio de função;
+		✓ Taxa de comentários;
+		✓ Taxa de entrega no prazo
+	• Métricas de Teste.
+		✓ Cobertura de código;
+		✓ Taxa de sucesso de testes;
+		✓ Taxa de falhas de testes;
+		✓ Tempo médio de execução de testes;
+		✓ Número de testes automatizados versus manuais;
+		✓ Número de casos de teste por requisito;
+		✓ Taxa de retorno de defeitos
+
+--//--
+
+Aula05:
+
+O que são Estimativas de Software?
+	• Previsão do esforço, tempo e recursos
+	necessários para concluir uma tarefa, uma fase ou um
+	projeto completo de software;
+	• São essenciais para a gestão de projetos, alocação de
+	recursos, definição de prazos, custos e comunicação com os
+	stakeholders
+
+Para que são usadas as estimativas de Software?
+	Para responder as seguintes questões:
+	1. Quanto tempo levará para concluir o projeto?
+	2. Quantos membros da equipe serão necessários?
+	3. Quanto custará o projeto?
+	4. Quais recursos serão necessários?
+	5. Quando o projeto estará pronto para ser entregue?
+
+Quais são as principais estimativas de Software?
+	1. Estimativas Baseadas em Analogias: compara o projeto atual com projetos anteriores e semelhantes
+	2. Estimativas Paramétricas: uso de modelos matemáticos para estimar o esforço:
+		FÓRMULA: EE = k1 * NF + k2 * TE + k3 * CS
+	3. Estimativas por Pontos de Função/Caso de Uso: quantificação das funcionalidades/casos de uso do software para estimar o tamanho e, consequentemente, o esforço necessário para elaborá-lo:
+		FÓRMULA: ETPF = 6 + 4 + 6 + 4 + 3 = 23 pontos de função
+			    EEh = ETPF * TP
+	4. Estimativas Heurísticas: são abordagens mais informais que dependem da experiência e do julgamento da equipe de desenvolvimento.
+	5. Estimativa de Planejamento Ágil/ Pontos de História: Nas metodologias ágeis, como Scrum e Kanban, as estimativas são frequentemente baseadas em iterações curtas e flexíveis, sendo ajustadas ao longo do tempo conforme mais informações sobre o projeto se tornam disponíveis
+
+Características das Estimativas de Software:
+
+• Estimativas de Custo e Esforço não são ciências exatas;
+• Fatores humanos, técnicos, ambientais e políticos podem
+afetar o custo final do software e o esforço necessário para
+desenvolvê-lo
+• É recomendável que as estimativas sejam usadas paralelamente
+
+--//--
+
+Aula 06:
+
+Unified Modeling Language – UML:
+- O quê é?
+	• Linguagem de Modelagem Unificada, composta por uma família de notações gráficas, apoiada por um metamodelo único, que ajuda na descrição e no projeto de sistemas de software
+	• Voltada principalmente para projetos construídos em cima dos princípios da OO
+
+- Os Diagramas da UML:
+ESTRUTURAIS:
+	• Diagrama de Classes: se dá pela formação do conjunto de informações sobre
+determinadas classes, que, unidas entre si, formam um
+sentido geral do projeto;
+	• Diagrama de Objetos: representa os objetos de um diagrama de classes em um
+determinado instante de tempo, representando suas
+instâncias e seus relacionamentos;
+	• Diagrama de Componentes: mostra as ferramentas de que os componentes são feitos, como arquivos de código fonte, bibliotecas de programação ou tabelas de bancos de dados;
+	• Diagrama de Implantação: mostra o layout físico de um sistema, revelando quais partes
+do software são executadas em quais partes do hardware;
+	• Diagrama de Pacotes: tem o objetivo de transformar as classes em pacotes;
+	• Diagrama de Estrutura Composta: modela colaborações, que descrevem uma visão de um conjunto de entidades cooperativas interpretadas por instâncias que cooperam entre si para executar uma função específica
+	• Diagrama de Perfil: destina-se a criar uma visão (metamodelo) do relacionamento entre classes para atender determinado domínio;
+
+COMPORTAMENTAIS:
+	• Diagrama de Casos de Uso: mostra um conjunto de casos de uso e atores (um tipo
+especial de classe) e seus relacionamentos. Importantes principalmente para organização e
+modelagem dos comportamentos de um sistema;
+	• Diagrama de Sequência: é um diagrama de interação que enfatiza a ordem temporal das mensagens, de forma dinâmica;
+	• Diagrama de Comunicação ou Colaboração: exibe a interação entre os objetos, consistindo de um conjunto de objetos e seus relacionamentos, incluindo as mensagens que podem ser trocadas entre eles;
+	• Diagrama de Transição de Estados: mostra uma máquina de estados, que consiste de estados, transições, eventos e atividades;
+	• Diagrama de Atividades: enfatiza o fluxo de controle de uma atividade para outra, sendo usado para ilustrar a visão dinâmica de um sistema;
+
+--//--
+
+Aula 07:
+
+Principais conceitos relacionados à Arquitetura de Software:
+1. Modelo de Arquitetura: Descreve a estrutura geral do
+sistema, como a arquitetura em camadas, cliente-servidor,
+orientada a micro serviços, entre outras;
+2. Componentes e Interfaces: Define os componentes do
+sistema e como eles se comunicam através de interfaces
+bem definidas;
+3. Padrões de Comunicação: Especifica como os diferentes
+componentes ou módulos do sistema trocam informações,
+como REST, gRPC, WebSocket etc.;
+4. Decisões de Design: Documenta decisões críticas de design
+que afetam a arquitetura, como a escolha de tecnologias,
+frameworks e bancos de dados;
+5. Qualidades Arquiteturais: Inclui atributos de qualidade,
+como desempenho, segurança, escalabilidade e
+disponibilidade, que a arquitetura deve atender
+
+Principais Estilos de Arquitetura de Software
+1. Arquiteturas centralizadas em dados;
+2. Arquiteturas de fluxo de dados;
+3. Arquiteturas de chamada e retorno;
+4. Arquiteturas orientadas a objetos;
+5. Arquiteturas em camadas;
+6. Arquiteturas de infraestruturas
+
+Padrões de Projeto:
+• São soluções recorrentes para problemas comuns de design
+de software;
+• São abstrações que capturam as melhores práticas e
+experiências de projetistas de software ao longo do tempo;
+• Ajuda a tornar o código mais compreensível, reutilizável e
+manutenível;
+• Fornecem um vocabulário comum para equipes de
+desenvolvimento discutirem soluções de design
+
+Principais Padrões de Projeto:
+- Desempenham papéis essenciais na Engenharia de Software,
+ajudando a criar sistemas de alta qualidade e fáceis de
+manter.
+	1. Padrão Singleton: Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a essa instância;
+	2. Padrão Factory Method: Define uma interface para criar um objeto, mas permite que as subclasses alterem o tipo de objetos que serão criados;
+	3. Padrão Observer: Define uma relação de um-para-muitos entre objetos, de modo que, quando um objeto muda de estado, todos os seus observadores sejam notificados e atualizados automaticamente
+	4. Padrão Strategy: Define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis, permitindo que o algoritmo seja escolhido durante a execução;
+	5. Padrão MVC (Model-View-Controller): Divide uma aplicação em três componentes principais: o Modelo, que contém os dados; a Visão, que exibe os dados; e o Controlador, que controla a interação entre o Modelo e a Visão
+
+Frameworks:
+O framework não é um padrão de arquitetura, mas sim um
+esqueleto com um conjunto de “pontos de conexão”,
+também chamados de ganchos e encaixes, que permitem
+que esse esqueleto seja adaptado a um domínio de
+problemas específico
+
+Exemplos de Frameworks:
+• Frameworks para Desenvolvimento Web;
+• Frameworks para Front-End;
+• Frameworks para Desenvolvimento de Games;
+• Frameworks para Desenvolvimento Mobile;
+• Frameworks para Back-End e API;
+• Frameworks para Testes;
+• Frameworks para Gerenciamento de Dependências;
+• Frameworks para Aprendizado de Máquina e IA;
+• Frameworks para Desenvolvimento de Aplicativos Desktop;
+• Frameworks para Segurança; etc

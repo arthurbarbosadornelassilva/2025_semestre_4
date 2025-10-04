@@ -1,0 +1,53 @@
+CRUD MongoDB:
+
+ Create
+ db.collection.insert( <document> )
+	db.aluno.insertOne( {
+	nome: 'Joao da Silva',
+	sexo: 'Masculino', fones:
+	[991234567, 996789001]} )
+
+	db.aluno.insertMany ( [{primeiro_nome: 'Maria', sobrenome :
+	'Cardoso', cpf: 229876543, endereço : { rua: 'Rua Frei Joao’,
+	número : ‘59’, bairro : ‘Ipiranga’, cidade : ‘São Paulo’, UF : ‘SP’ } },
+	{nome_completo : 'Givanildo dos Santos', rg: '98765-X’, sexo :
+	'Masculino’ } ] )
+
+ db.collection.save( <document> )
+ db.collection.update( <query>, <update>, { upsert: true } )
+--//--
+
+ Read
+ db.collection.find( <query>, <projection> )
+	db.aluno.find(
+	{ cpf: {$ne:229876543,
+	sexo: 'Masculino' } } )
+
+ db.collection.findOne( <query>, <projection> )
+	db.aluno.findOne( { $or:[ { nome_completo: /silva/i } ,
+	{ nome:/silva/i }, { sobrenome:/silva/i } ] },
+	{sexo: {$not: /masc/i}})
+--//--
+
+ Update
+ db.collection.update( <query>, <update>, <options> )
+	db.aluno.updateOne
+	({sexo:/masc/i}, {$set :
+	{nacionalidade: 'Brasil' } } )
+
+	db.aluno.updateMany
+	({sexo:/masc/i}, {$set : {nacionalidade:
+	'Brasil' } } )
+
+ db.collection.replaceOne()
+--//--
+
+ Delete
+ db.collection.remove( <query>, <justOne> )
+	db.aluno.deleteOne(
+	{primeiro_nome: 'Maria'} );
+	
+	db.aluno.deleteMany(
+	{primeiro_nome: 'Maria'} );
+--//--
+
