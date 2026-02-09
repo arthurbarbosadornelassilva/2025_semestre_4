@@ -62,7 +62,7 @@ cobertura completa dos testes e a qualidade do software
 
 Principais Estratégias de Teste de Software:
 1. Teste de Unidade (componentes do software testados individualmente)
-2. Teste de Integração (estar a interação entre diferentes unidades ou módulos do software)
+2. Teste de Integração (testar a interação entre diferentes unidades ou módulos do software)
 3. Teste de Sistema (o sistema completo é testado em sua totalidade para garantir que ele atenda aos requisitos e funcione conforme o esperado)
 4. Teste de Aceitação (o objetivo é garantir que o sistema atenda aos critérios de aceitação);
 5. Teste de Regressão (verifica se as modificações introduziram novos defeitos ou afetaram negativamente outras funcionalidades);

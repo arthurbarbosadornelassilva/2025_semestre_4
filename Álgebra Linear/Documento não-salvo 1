@@ -1,0 +1,135 @@
+Anotacoes:
+
+1)  Presets Visuais:
+plt.rcParams['figure.figsize'] = (8, 6)
+plt.rcParams['figure.facecolor'] = 'white'
+
+2) Calcular Produto Vetorial: c = np.cross(a, b)
+
+3)  O produto vetorial  a⃗×b⃗   sempre resulta em um vetor perpendicular ao plano formado por  a⃗   e  b
+
+4) Para Ver/ Desenhar Vetores:
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Desenhar vetores
+ax.quiver(0, 0, 0, a[0], a[1], a[2], color='blue', label='a', arrow_length_ratio=0.1)
+ax.quiver(0, 0, 0, b[0], b[1], b[2], color='red', label='b', arrow_length_ratio=0.1)
+ax.quiver(0, 0, 0, c[0], c[1], c[2], color='green', label='a×b', arrow_length_ratio=0.1)
+
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.legend()
+ax.set_title('Produto Vetorial')
+plt.show()
+
+5) Calcular Produto Escalar: produto = np.dot(a, b)
+
+6) Quando dois vetores são paralelos, o produto vetorial é sempre o vetor nulo [0,0,0]. Isso faz sentido geometricamente: não existe um único plano perpendicular a dois vetores paralelos, então o resultado é zero
+
+7) Ângulo entre Dois Vetores:
+# COMPLETE AQUI:
+produto_escalar = np.dot(a, b)
+norma_a = np.linalg.norm(a)
+norma_b = np.linalg.norm(b)
+
+cos_theta = produto_escalar / (norma_a * norma_b)
+angulo_rad = np.arccos(cos_theta)
+angulo_graus = np.degrees(angulo_rad)
+
+print(f"Produto escalar: {produto_escalar}")
+print(f"Ângulo: {angulo_graus:.1f}°")
+
+8) Qual é o ângulo entre os vetores [1,0,0] e [1,1,0]?
+
+a) 30° b) 45° c) 60° d) 90°
+
+Pense na resposta antes de expandir abaixo! ⬇️
+
+📖 Ver Resposta e Explicação
+Resposta correta: b
+
+O ângulo é 45°. O vetor [1,0,0] aponta para o eixo X, e [1,1,0] aponta na diagonal entre X e Y. Visualmente, isso forma um ângulo de 45°. Matematicamente: cos(θ)=12√≈0.707, então θ=45°
+
+9) Similaridade de COsseno entre DOis Valores:
+def similaridade_cosseno(a, b):
+    """
+    Calcula a similaridade de cosseno entre dois vetores.
+    """
+    # COMPLETE AQUI:
+    produto = np.dot(a, b)
+    norma_a = np.linalg.norm(a)
+    norma_b = np.linalg.norm(b)
+    
+    return produto / (norma_a * norma_b)
+
+# Teste:
+v1 = np.array([1, 2, 3])
+v2 = np.array([1, 2, 3])
+print(f"Similaridade: {similaridade_cosseno(v1, v2):.3f}")  # Deve dar 1.000
+
+10) Qual deve ser o ângulo entre [1,0,0] e [0,1,0]?
+
+a) 0° (paralelos) b) 45° c) 90° (perpendiculares) d) 180° (opostos)
+
+Pense na resposta antes de expandir abaixo! ⬇️
+
+📖 Ver Resposta e Explicação
+Resposta correta: c
+
+90° (perpendiculares). Esses vetores apontam para eixos diferentes (X e Y), formando um ângulo reto. O produto escalar é zero: 1×0+0×1+0×0=0, confirmando que são perpendiculares
+
+11) Vetores com Similaridade 0.5:
+
+ COMPLETE AQUI:
+a = np.array([2, 0, 2])
+b = np.array([0, 1, 1])
+
+sim = similaridade_cosseno(a, b)
+print(f"Similaridade: {sim:.3f}")
+
+# Dica: similaridade 0.5 corresponde a ângulo de 60°
+
+12) Similaridade de Textos:
+Como funciona?
+Cada frase é convertida em um vetor de números
+Calculamos a similaridade de cosseno entre os vetores
+Quanto maior a similaridade, mais parecidas são as frases
+
+13) Se você quer criar vetores com similaridade 0.5, qual ângulo eles devem formar?
+
+a) 30° b) 45° c) 60° d) 90°
+
+Pense na resposta antes de expandir abaixo! ⬇️
+
+📖 Ver Resposta e Explicação
+Resposta correta: c
+
+60°. Se cos(θ)=0.5, então θ=60°
+
+14) Qual a similaridade de cosseno entre vetores perpendiculares?
+
+a) -1 b) 0 c) 0.5 d) 1
+
+Pense na resposta antes de expandir abaixo! ⬇️
+
+📖 Ver Resposta e Explicação
+Resposta correta: b
+
+A similaridade é 0. Vetores perpendiculares formam ângulo de 90°, e cos(90°)=0. Isso significa que os vetores não têm nenhuma componente em comum
+
+15) Vetores Simulados: 
+(imagine que cada número representa uma "característica" da frase)
+frase1 = np.array([0.8, 0.2, 0.1, 0.9])  # "Eu gosto de programar"
+frase2 = np.array([0.7, 0.3, 0.2, 0.8])  # "Eu amo programar"
+frase3 = np.array([0.1, 0.9, 0.8, 0.2])  # "O clima está quente"
+
+# COMPLETE AQUI: calcule as similaridades, sendo que o vetor com maior similaridade tem as frases mais parecidas
+sim_1_2 = similaridade_cosseno(frase1, frase2)
+sim_1_3 = similaridade_cosseno(frase1, frase3)
+sim_2_3 = similaridade_cosseno(frase2, frase3)
+
+print(f"Similaridade (frase1, frase2): {sim_1_2:.3f}")
+print(f"Similaridade (frase1, frase3): {sim_1_3:.3f}")
+print(f"Similaridade (frase2, frase3): {sim_2_3:.3f}")

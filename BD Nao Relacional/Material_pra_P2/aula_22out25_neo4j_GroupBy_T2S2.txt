@@ -1,0 +1,119 @@
+// aula 22/outubro - conversao de tipos + funções de grupo
+// 1 - conversão de tipo de dados - altura em artista para inteiro
+MATCH (a:Artista)
+SET a.altura = toInteger(a.altura)
+RETURN a 
+
+// 2 - conversão em filmes -> duração e ano_lançamento
+MATCH (f:Filme)
+SET f.duração = toInteger(f.duração) , f.ano_lançamento = toInteger(f.ano_lançamento )
+RETURN f.titulo_original, f.duração, f.ano_lançamento
+
+// funções de grupo MAX , MIN, SUM, AVG, COUNT
+// 3 - média de altura dos artistas
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL
+RETURN AVG(a.altura) AS Média 
+
+// 4 - contagem de artistas por altura
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL
+RETURN a.altura , COUNT(a.altura) AS Contagem
+ORDER BY a.altura
+
+// descobrindo artista de 2,93 m - Bart the bear
+MATCH (a:Artista)
+WHERE a.altura = 293
+RETURN a
+
+// 5 - Maior e menor altura
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL
+RETURN MAX(a.altura) AS Maior , MIN(a.altura) AS Menor 
+
+// 6 - Média de altura por local de nascto
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL AND a.local_nascto IS NOT NULL
+RETURN a.local_nascto AS LocalNascto , AVG(a.altura) AS Média,
+COUNT(a.altura) AS Contagem
+ORDER BY Média DESC 
+
+// 7 - Média de altura por local de nascto mas somente com mais de 5 contagens
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL AND a.local_nascto IS NOT NULL
+WITH a.local_nascto AS LocalNascto , AVG(a.altura) AS Média,
+COUNT(a.altura) AS Contagem
+WHERE Contagem >= 5 
+RETURN LocalNascto, Média, Contagem
+ORDER BY Média DESC 
+
+// 8 - Contagem de filmes por gênero
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+RETURN f.generos, COUNT(*) AS Qtde_genero
+ORDER BY Qtde_genero DESC
+
+// 9 - refazendo a 8 com UNWIND - tirando os elementos do vetor generos
+// não deu certo, falta cada genero ser iniciado e terminado com " , "ROMANCE"
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+UNWIND f.generos AS Gênero
+RETURN Gênero, COUNT(*) AS Qtde_genero
+ORDER BY Qtde_genero DESC
+
+// 10  - refazendo a 9 mas transformando o elemento do vetor em várias quebras
+// de palavras separadas por "palavra" (aspas)
+// ["Comedy, Drama, Romance"] => ["Comedy", "Drama", "Romance"]
+WITH ["Comedy, Drama, Romance, Drama"] AS generos
+WITH [ elemento in generos | split (elemento, ', ')] AS VetorExtraido
+// RETURN VetorExtraido
+UNWIND VetorExtraido AS VetorGeneros
+// RETURN VetorGeneros
+UNWIND VetorGeneros AS Gênero
+RETURN Gênero, COUNT(*) AS Contagem
+
+// aplicando na consulta 9
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+WITH f.generos AS V_Generos
+WITH [ elemento in V_Generos | split (elemento, ', ')] AS VetorExtraido
+UNWIND VetorExtraido AS VetorGeneros
+UNWIND VetorGeneros AS Gênero
+RETURN Gênero, COUNT(*) AS Contagem
+ORDER BY Contagem DESC
+
+
+// 11 - contagem de filmes por país e genero
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL AND f.país IS NOT NULL
+WITH f.generos AS V_Generos , f.país AS V_Paises
+WITH [ elemento in V_Generos | split (elemento, ', ')] AS VetorExtraidoGen, 
+[ elemento in V_Paises | split (elemento, ', ')] AS VetorExtraidoPais, 
+UNWIND VetorExtraidoGen AS VetorGeneros
+UNWIND VetorExtraidoPais AS VetorPaises
+UNWIND VetorGeneros AS Gênero
+UNWIND VetorPaises AS Paísfilme
+RETURN Paísfilme, Gênero, COUNT(*) AS Contagem
+ORDER BY Contagem DESC
+
+// 12 - contagem de filmes por ano de lançamento
+MATCH (f:Filme)
+WHERE f.país IS NOT NULL
+WITH f.país AS V_Paises, f.ano_lançamento AS Anolança
+WITH [ elemento in V_Paises | split (elemento, ', ')] AS VetorExtraidoPais, 
+Anolança AS Ano1
+UNWIND VetorExtraidoPais AS VetorPaises
+UNWIND VetorPaises AS Paísfilme
+WITH Paísfilme as paisbr, Ano1 AS Ano2
+WHERE paisbr =~ '(?i).*brazil.*' 
+RETURN Ano2 AS Ano_Filme, COUNT(*) AS Contagem
+ORDER BY Contagem DESC 
+
+// 13 - qtde de filmes de um artista por tipo de participação
+MATCH (f)-[e:Elenco]->(a)
+WHERE a.nome =~ '(?i)^clint.*' AND a.nome  =~ '(?i).*eastwood.*'
+RETURN e.tipo_participação , COUNT(*) AS Qtde_participações
+
+MATCH (f)-[e:Elenco]->(a)
+WHERE a.nome =~ '(?i)^selton.*' AND a.nome  =~ '(?i).*mello.*'
+RETURN e.tipo_participação , COUNT(*) AS Qtde_participações

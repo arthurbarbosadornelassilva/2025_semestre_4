@@ -1,0 +1,57 @@
+INTEGRANTES:
+- Leonardo Formagio Bicudo RA: 24.00257-7
+- Vitor Eiken Tanahara RA:  24.00684-0
+- Arthur Barbosa Dornelas Silva RA: 24.00813-3
+
+-----//-----
+
+1) CREATE 
+(m1:Musica {name: "Pai", genero: "MPB", duracao: 300}),
+(m2:Musica {name: "Só Você", genero: "MPB", duracao: 270}),
+(m3:Musica {name: "Life Eternal", genero: "Rock", duracao: 183}),
+(m4:Musica {name: "Dance Macabre", genero: "Rock", duracao: 235}),
+
+2) CREATE (a1: Album {name: "Charm", data_lancamento: date("2024-07-12"), qtd_musicas: 11, qtd_vendas: 60000}), (a2: Album {name: "Fábio Jr.", data_lancamento: date("1979-01-01"), qtd_musicas: 11, qtd_vendas: 40000}), (a3: Album {name: "Hurry up, Tomorrow", data_lancamento: date("2025-01-31"), qtd_musicas: 22, qtd_vendas: 490500}), (a4: Album {name: "Prequelle", data_lancamento: date("2018-06-01"), qtd_musicas: 10, qtd_vendas: 61000});
+
+3) CREATE (a1:Artista {name: "Fábio Jr.", dataAniversario: date("1953-09-21")}), (a2:Artista {name: "Ghost", dataAniversario: date("2006-01-01")})
+
+4)
+(ar1)-[:LANÇOU]->(al1),
+(ar1)-[:LANÇOU]->(al2),
+(ar2)-[:LANÇOU]->(al3),
+(ar2)-[:LANÇOU]->(al4),
+
+(al1)-[:CONTÉM]->(m1),
+(al1)-[:CONTÉM]->(m2),
+(al3)-[:CONTÉM]->(m3),
+(al3)-[:CONTÉM]->(m4),
+
+(m1)-[:INTERPRETADA_POR]->(ar1),
+(m2)-[:INTERPRETADA_POR]->(ar1),
+(m3)-[:INTERPRETADA_POR]->(ar2),
+(m4)-[:INTERPRETADA_POR]->(ar2);
+
+
+5)
+MATCH (al:Album)-[:CONTÉM]->(m:Musica)-[:INTERPRETADA_POR]->(ar:Artista)
+WITH al, collect(DISTINCT ar.name) AS artistas
+WHERE size(artistas) = 1
+RETURN al.name AS Album, artistas[0] AS Artista;
+
+
+6) WITH date() - duration({months: 2}) AS mesesPassados,
+date() AS mesAtual
+WITH date({year: mesesPassados.year, month: mesesPassados.month, day: 1}) AS inicio,
+     date({year: mesAtual.year, month: mesAtual.month, day: mesAtual.day}) AS fim
+MATCH (a: Album)
+WHERE a.data_lancamento >= inicio and a.data_lancamento <= fim
+RETURN a
+
+7) MATCH (a:Album)-[:CONTÉM]->(m:Musica)
+RETURN a.name AS nome_album, SUM(m.duracao) AS tempoTotalAlbum
+ORDER BY tempoTotalAlbum DESC
+
+
+8) MATCH (ar:Artista)-[:LANÇOU]->(m:Musica)<-[:CONTÉM]-(al:Album)
+WHERE m.duracao > 300
+RETURN ar, m, al

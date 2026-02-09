@@ -1,0 +1,89 @@
+ATIVIDADE 06:
+
+INTEGRANTES:
+- Leonardo FOrmagio Bicudo - RA: 24.00257-7
+- Vitor Eiken Tanahara  -  RA: 24.00684-0
+- Arthur Barbosa Dornelas Silva - RA: 24.00813-3
+
+1)
+a)
+MATCH (f: Filme)
+RETURN f.país AS Localizacao, avg(f.duracao) 
+ORDER BY Localizacao
+
+b)
+MATCH (f: Filme)
+RETURN f.gêneros AS Genero, avg(f.duracao) 
+ORDER BY Genero
+
+c)
+MATCH (f: Filme)
+RETURN f.país AS Localizacao, f.gêneros AS Genero, avg(f.duracao)
+ORDER BY Localizacao, Genero
+
+d)
+MATCH (f: Filme)
+RETURN f.gêneros AS Genero, f.ano_lançamento AS Lancamento avg(f.duracao) 
+ORDER BY Genero, Lancamento
+
+2)
+a)
+MATCH (a:Artista)
+WHERE a.altura IS NOT NULL
+  AND a.local_nascto IS NOT NULL
+RETURN a.local_nascto AS Local_Nascimento,
+  MAX(a.altura) AS Maior_Altura
+  ORDER BY Maior_Altura
+
+b)
+MATCH (a:Artista)
+WITH a,
+CASE 
+WHEN a.dt_nascto =~ '\\d{4}-\\d{2}-\\d{2}' THEN date(a.dt_nascto)
+WHEN a.dt_nascto =~ '\\d{4}' THEN date({year: toInteger(a.dt_nascto)})
+ELSE NULL
+END AS dataFinal
+WITH dataFinal.year as ano_nascto
+WHERE ano_nasct IS NOT NULL
+RETURN ano_nascto, COUNT(*) AS contagem_ano_nascto
+ORDER BY contagem_ano_nascto DESC
+
+c)
+MATCH(a:Artista)
+WITH a,
+CASE 
+WHEN a.dt_nascto =~ '\\d{4}-\\d{2}-\\d{2}' THEN date(a.dt_nascto)
+WHEN a.dt_nascto =~ '\\d{4}' THEN date({year: toInteger(a.dt_nascto)})
+ELSE NULL
+END AS dataFinal
+WITH dataFinal.year AS ano_nascto, min(a.altura) AS menor_altura, a.nome as nome
+WHERE ano_nascto IS NOT NULL AND menor_altura IS NOT NULL
+RETURN ano_nascto, menor_altura, nome
+ORDER BY ano_nasct
+
+3)
+MATCH (f:Filme)-[:Elencos]->(a:Artista)
+WHERE 'Adventure' IN f.generos
+RETURN f.titulo, a.nome
+
+4)
+MATCH (f: Filme)
+RETURN f.diretor AS Diretor, count(f.diretor) AS Participacoes
+ORDER BY Diretor, Participacoes
+
+5)
+MATCH (f: Filme)
+RETURN f.diretor AS Diretor, f.gêneros AS Genero, count(f.diretor) AS qtd_Participacoes
+ORDER BY Diretor, Genero, qtd_Participacoes
+
+6)
+MATCH (f:Filme)-[:Elencos]->(a:Artista)
+WHERE a.local_nascto=~ '(?i).*Brasil' AND f.generos = 'Comedy'
+RETURN a.nome AS AtorOuAtriz, count(f) AS qtd_FilmesDeComedia
+ORDER BY qtd_FilmesDeComedia DESC
+
+7)
+MATCH (f:Filme)-[r:Elencos]->(a:Artista)
+WHERE NOT r.tipo_participação IN ['Diretor', 'Produtor']
+RETURN f.titulo AS Filme, COUNT(a) AS TotalElenco
+ORDER BY TotalElenco DESC;

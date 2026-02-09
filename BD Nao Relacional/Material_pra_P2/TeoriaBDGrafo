@@ -1,0 +1,58 @@
+**Sobre Definição de Grafos, Tipos de Grafos, Percursos e Representações de Grafo**
+
+
+- DEFINIÇÃO:
+
+Um grafo G é definido por G = (V, E), sendo que V representa o conjunto
+de vértices (nós) e E o conjunto de arestas (i, j), onde i, j ∈ V . Dois nós
+i, j são vizinhos, denotado por i ∼ j, se eles estão conectados por uma
+aresta.
+• A Figura 1.1 mostra dois exemplos de grafos: o grafo G1 consiste dos
+conjuntos V = {a, b, c, d, e} e E = {e1, e2, e3, e4, e5, e6}; G2 possui o nó
+C que não é conectado com nenhum outro nó do grafo
+Um BD baseado em Grafos não depende de joins - as relações
+já estão gravadas como conexões diretas
+
+
+- TIPOS:
+
+Grafo Nao Dirigido
+Grafo Dirigido (com seta)
+Grafo Ponderado (com numeros)
+
+
+
+- PERCURSOS:
+
+TRAJETO num grafo 𝐺 é um passeio cujas
+arestas que o constituem são todas
+distintas
+
+PASSEIO num grafo 𝑮 é qualquer
+sequência de vértices adjacentes. Um
+passeio pode repetir os vértices num
+grafo. Se o passeio começa e acaba no
+mesmo vértice diz-se fechado, caso
+contrário diz-se aberto
+
+CAMINHO num grafo é um passeio cujos
+vértices e arestas que os constituem
+são todos distintos
+
+
+
+- REPRESENTAÇÕES:
+
+LISTA DE ADJASCÊNCIA: Uma maneira simples de armazenar grafos, é
+listando os vértices adjacentes a cada vértice do grafo (A: b, c // B: a, c // C: b, a)
+
+LISTA DE ADJASCÊNCIA DIRECIONADA: Tabela com vértices iniciais e finais (A --> aponta para --> b // B --> aponta para --> B (ele mesmo), C)
+
+MATRIZ DE ADJACÊNCIA: 
+Se G é um grafo com vértices {1,2,3,...,n}, sua matriz de adjacência é a
+matriz n X n (vertice X vertice)
+
+MATRIZ DE INCIDÊNCIA:
+Se G é um grafo com vértices {1,2,3,...,n} e arestas {1,2,3,...,m},
+sua matriz de incidência é a matriz n X m cujo elemento ij é igual a
+1 se a aresta ej é incidente ao vértice vi, ou 0, caso contrário (vertice X aresta)

@@ -1,0 +1,57 @@
+// aula 23/outubro - continuação Group BY
+
+// Contagem de filmes por gênero - volta como vetor
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+RETURN f.generos, COUNT(*) AS Contagem
+
+// tirar os elementos do vetor para contar -- não funciona porque só tem 1 elemento
+// com abre e fecha aspas, para ser individualizado cada genero precisa estar entre "aspas"
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+UNWIND f.generos AS Gênero
+RETURN Gênero, COUNT(*) AS Contagem
+
+// transformando o conteúdo do vetor
+WITH ["Action, Adventure, Drama"] AS VetorUm
+WITH [ elemento in VetorUm | split (elemento, ', ') ] AS VetorGeneros
+// RETURN VetorGeneros
+UNWIND VetorGeneros AS VetorCerto
+UNWIND VetorCerto AS gênerolinha
+RETURN gênerolinha
+
+// aplicando esta técnica na consulta dos gêneros
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL
+WITH f.generos AS VetorUm
+WITH [ elemento in VetorUm | split (elemento, ', ') ] AS VetorGeneros
+UNWIND VetorGeneros AS VetorCerto
+UNWIND VetorCerto AS gênerolinha
+RETURN gênerolinha, COUNT(*) AS Contagem
+ORDER BY Contagem DESC
+
+// idem consulta acima , mas incluindo o país, que também é vetor
+MATCH (f:Filme)
+WHERE f.generos IS NOT NULL AND f.país IS NOT NULL
+WITH f.generos AS VetorUmGen, f.país AS VetorUmPais
+   WITH [ elemento in VetorUmGen | split (elemento, ', ') ] AS VetorGeneros ,
+             [ elemento in VetorUmPais | split (elemento, ', ') ] AS VetorPaises
+     UNWIND VetorGeneros AS VetorCertoGen
+           UNWIND VetorPaises AS VetorCertoPais
+                 UNWIND VetorCertoGen AS gênerolinha
+                       UNWIND VetorCertoPais AS paíslinha
+RETURN paíslinha, gênerolinha, COUNT(*) AS Contagem
+ORDER BY Contagem DESC
+
+// qtde de filmes do Brasil por ano de lançamento
+MATCH (f:Filme)
+WHERE f.país IS NOT NULL
+WITH f.país AS VetorUmPais, f.ano_lançamento AS AnoUm
+     WITH  [ elemento in VetorUmPais | split (elemento, ', ') ] AS VetorPaises, 
+                     AnoUm AS AnoSplit
+          UNWIND VetorPaises AS VetorCertoPais
+             UNWIND VetorCertoPais AS paíslinha
+     WITH paíslinha AS paísbr, AnoSplit AS AnoLança
+        WHERE paísbr =~ '(?i).*brazil.*' 
+RETURN AnoLança, COUNT(*) AS Qtde_Filmes_ano
+ORDER BY Qtde_Filmes_ano DESC

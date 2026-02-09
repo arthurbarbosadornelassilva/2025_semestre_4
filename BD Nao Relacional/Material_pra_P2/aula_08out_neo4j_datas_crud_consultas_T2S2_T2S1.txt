@@ -1,0 +1,151 @@
+aula neo4j - 08/outubro
+//  aula 01/outubro - CRUD Neo4j - T2S2
+// limpando todo o database
+MATCH (n)
+DETACH DELETE n
+// criando nó do tipo Filme
+CREATE (f1:Filme {nome: "Star Wars", ano_lançamento: 1977,
+gênero: "Ficção" , estúdio: "Lucas Films" } )
+RETURN f1
+// criando nó de filme e nó de artista
+CREATE (f2:Filme {nome: "Ainda estou aqui", ano_lançamento: 2024,
+gênero: "Drama", país: "Brasil" }  ) ,
+(a3:Artista {nome: "Fernanda Torres" , sexo: "Feminino", país: "Brasil"} ) 
+RETURN f2, a3
+// RETURN * 
+// para visualizar todos os nós e arestas
+MATCH (n) RETURN n
+// criando mais dois artistas
+CREATE ( x:Artista {nome: "Harrison Ford", país: "EUA", sexo: "Masculino" }) ,
+(y:Artista {nome: "Carrie Fischer", sexo:"Feminino", país: "EUA"}  )
+RETURN * 
+
+// visualizando toda a base
+MATCH (r)
+RETURN r
+// visualizando somente um tipo
+MATCH( f:Filme)
+RETURN f
+
+// criando relacionamento entre Ainda Estou aqui -> Fernanda Torres
+// (f)-[e:Elenco]->(a)
+MATCH (jota:Artista), (dabliu:Filme) 
+WHERE jota.nome = "Fernanda Torres" AND dabliu.nome = "Ainda estou aqui"
+CREATE (dabliu)-[e:Elenco {tipo_participação: "Atriz", papel : "Eunice Paiva"}]->(jota)
+RETURN jota, dabliu
+// Harrison e Carrie com Star Wars
+MATCH (a1:Artista), (a2:Artista) , (f:Filme)
+WHERE a1.nome = "Harrison Ford" AND a2.nome = "Carrie Fischer"
+AND f.nome = "Star Wars"
+CREATE (f)-[e1:Elenco {tipo_participação: "Atriz", papel: "Princesa Leia"}]->(a2),
+(f)-[e2:Elenco {tipo_participação: "Ator", papel: "Hans Solo"} ]->(a1)
+RETURN a1, a2, e1, e2, f 
+// visualizando toda a base
+MATCH (n)
+RETURN n
+// visualizando só artistas
+MATCH (a:Artista)
+RETURN a 
+// especificando um artista
+MATCH (a:Artista)
+WHERE a.nome = "Harrison Ford" 
+RETURN a
+// mesma consulta com where dentro do parenteses
+MATCH (a:Artista { nome : "Harrison Ford" } )
+RETURN a
+// consulta como LIKE, busca aproximada com expressão regular (regex)
+MATCH (a:Artista)
+WHERE a.nome =~  '(?i).*harrison ford.*'
+RETURN a
+// artistas com o primeiro nome harrison
+MATCH (a:Artista)
+WHERE a.nome =~  '(?i)harrison.*'
+RETURN a
+// artistas com o ultimo nome 'ford'
+MATCH (a:Artista)
+WHERE a.nome =~  '(?i).*ford'
+RETURN a
+// todos que atuaram como atriz
+MATCH (f)-[e:Elenco]->(a)
+WHERE e.tipo_participação =~ '(?i).*atriz*.' 
+AND a.nome =~ '(?i).*fischer.*' 
+RETURN *
+
+// aula 08/out - continuação CRUD, consultas sem REGEX,
+manipulação de datas
+// criando mais um filme e artistas
+CREATE (f5:Filme {nome: "O Poderoso Chefão", estúdio: "Paramount", ano_lançamento : 1972, gênero: "Drama", duração_min : 175 })  
+RETURN f5
+
+// artistas
+// criando mais dois artistas
+CREATE ( a10:Artista {nome: "Marlon Brando", país: "EUA", sexo: "Masculino" }) ,
+(a11:Artista {nome: "Al Pacino", sexo:"Masculino", país: "EUA"}  )
+RETURN * 
+// relacionando os artistas do Poderoso chefão
+MATCH (a10:Artista), (a11:Artista) , (f5:Filme)
+WHERE a10.nome = "Marlon Brando" AND a11.nome = "Al Pacino"
+AND f5.nome = "O Poderoso Chefão"
+CREATE (f5)-[e10:Elenco {tipo_participação: "Ator", papel: "Vito Corleone"}]->(a10),
+(f5)-[e11:Elenco {tipo_participação: "Ator", papel: "Michael Corleone"} ]->(a11)
+RETURN a10, a11, e10, e11, f5
+
+// consultas com operadores - sem like
+// atores que tem Brando no nome -> similar '%BRANDO%'
+MATCH (x:Artista)
+WHERE toUpper(x.nome) CONTAINS 'BRANDO'
+RETURN x
+// filmes que o nome termina com WARS
+MATCH (f:Filme)
+WHERE toUpper(f.nome) ENDS WITH 'WARS'
+RETURN f 
+// atores que se chaman Harrison
+MATCH (b:Artista)
+WHERE toLower(b.nome) STARTS WITH 'harrison' 
+RETURN b 
+// consulta na aresta
+// mostrar todas as participações de atores
+MATCH (f)-[e:Elenco]->(a)
+WHERE e.tipo_participação =~ '(?i).*ator.*'
+RETURN * 
+
+// trabalhando com datas
+// data e hora atual - Greenwich
+RETURN date() AS Data_atual, datetime() AS Data_hora_atual 
+// horario de São Paulo
+RETURN datetime({timezone: "America/Sao_Paulo"}) AS Data_hora_atual
+// EXTRACT extraindo pedaços da data e hora
+RETURN datetime({timezone: "America/Sao_Paulo"}).hour AS Hora_atual
+RETURN datetime({timezone: "America/Sao_Paulo"}).month AS Mes_Atual
+RETURN datetime({timezone: "America/Sao_Paulo"}).week AS Semana_atual
+// DURATION similar ao INTERVAL do SQL
+RETURN datetime({timezone: "America/Sao_Paulo"}) + duration({minutes:22})
+RETURN datetime({timezone: "America/Sao_Paulo"}) - duration({months:1})
+// formatos de data
+UNWIND [
+date('2025-10-08'),
+date('2025-10'),  // completa com dia 01
+date('202510'),  // completa com dia 01
+date('2025-W41-1'),  // 1o dia da semana 41
+date('2025200'), // retorna o dia 200 do ano de 2025
+date('2025') // completa com 01-01 
+] AS Formatos_data
+RETURN Formatos_data
+
+// calcula intervalo entre datas
+UNWIND [
+duration.between( date("2000-01-15"), date()),
+duration.between(datetime({year: 2017, month: 10, day: 29, hour: 0, timezone: 'Europe/Stockholm'}), datetime({year: 2017, month: 10, day: 29, hour: 0, timezone: 'Europe/London'}))
+] AS Duração
+RETURN Duração
+
+// atualizar um ator definindo a data de nascimento
+MATCH (a:Artista)
+WHERE a.nome =~ '(?i).*pacino.*'
+SET a.data_nascimento = date("1940-04-25") 
+RETURN a
+
+// idade do Al Pacino
+MATCH (a:Artista)
+WHERE a.nome =~ '(?i).*pacino.*'
+RETURN ( date().year - date(a.data_nascimento).year ) As Anos
